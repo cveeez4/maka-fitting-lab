@@ -1,0 +1,26 @@
+{
+  "attempts": [
+    {
+      "commit": "0e94abb6b5f5ec04c101b60f8fde62520758c752",
+      "run": "https://github.com/cveeez4/maka-fitting-lab/actions/runs/40380195639",
+      "result": "failure",
+      "stage": "browser installer",
+      "fix": "pin Ubuntu 24.04 and invoke installed Playwright binary explicitly"
+    },
+    {
+      "commit": "c3c485b1ef0b75e0bfea1c41d84a55c7b06c00e6",
+      "run": "https://github.com/cveeez4/maka-fitting-lab/actions/runs/40380611724",
+      "result": "failure",
+      "stage": "browser test"
+    },
+    {
+      "commit": "d085e58fbec9a006376f4de92beadffe1a2bd89c",
+      "run": "https://github.com/cveeez4/maka-fitting-lab/actions/runs/40381081040",
+      "result": "failure",
+      "diagnostic": "offscreen frame-stop assertion",
+      "rootCause": "scrolling to the footer did not guarantee that a tall desktop viewport no longer intersected the canvas",
+      "fix": "use a shorter temporary viewport, explicitly assert nonintersection, then measure pause/resume; do not remove pause assertion"
+    }
+  ],
+  "currentState": "fix submitted for rerun; this history alone does not certify the latest run"
+}

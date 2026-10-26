@@ -223,7 +223,17 @@ try {
     await page.waitForTimeout(1000);
     assert((await page.evaluate(() => window.__lab.frames)) > rotating);
     // Rotation keeps demand rendering active; offscreen rendering must still pause.
+    // A tall desktop viewport can still intersect the canvas even at the footer.
+    // Force an actually offscreen rectangle, then test the observer (not a scroll assumption).
+    await page.setViewportSize({ width, height: Math.min(height, 600) });
     await page.locator("footer").scrollIntoViewIfNeeded();
+    assert(
+      await page.locator("#viewport").evaluate((e) => {
+        const r = e.getBoundingClientRect();
+        return r.bottom <= 0 || r.top >= innerHeight;
+      }),
+      "offscreen test precondition must hold",
+    );
     await page.waitForTimeout(700);
     const offscreen = await page.evaluate(() => window.__lab.frames);
     await page.waitForTimeout(600);
@@ -232,6 +242,8 @@ try {
     await page.waitForTimeout(700);
     assert((await page.evaluate(() => window.__lab.frames)) > offscreen);
     await page.locator("#rotate").click();
+    await page.setViewportSize({ width, height });
+    await page.locator("#viewport").scrollIntoViewIfNeeded();
     let contextRecovery = "not attempted on this viewport";
     if (name === "desktop") {
       const supported = await page.evaluate(() => {
@@ -278,6 +290,7 @@ try {
     assert.deepEqual(network, []);
     reports.push({
       viewport: name,
+      browserVersion: browser.version(),
       size: [width, height],
       result: "PASS",
       renderMetrics: await page.evaluate(() => window.__lab.performanceMetrics),

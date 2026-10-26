@@ -4,7 +4,7 @@ permissions:
   contents: read
 jobs:
   offline-and-unit:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
@@ -17,7 +17,7 @@ jobs:
       - run: npm run build:lab
       - run: npm run test:lab
       - run: npm run test:motion
-      - run: npm exec playwright install --with-deps chromium
+      - run: ./node_modules/.bin/playwright install --with-deps --only-shell chromium
       - run: npm run test:lab:browser
       - uses: actions/upload-artifact@v4
         if: always()

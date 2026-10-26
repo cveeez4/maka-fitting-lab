@@ -1,0 +1,16 @@
+{
+  "commit": "0e94abb6b5f5ec04c101b60f8fde62520758c752",
+  "runUrl": "https://github.com/cveeez4/maka-fitting-lab/actions/runs/40380195639",
+  "conclusion": "failure",
+  "failedStage": "Playwright browser/dependency install",
+  "passedStages": [
+    "npm ci",
+    "npm test",
+    "npm run build:lab",
+    "npm run test:lab",
+    "npm run test:motion"
+  ],
+  "browserTestStage": "skipped",
+  "logAccess": "job metadata and annotations accessible; job log endpoint returned 403",
+  "remediation": "pin ubuntu-24.04 and use local pinned Playwright binary with explicit --with-deps --only-shell flags; rerun required"
+}

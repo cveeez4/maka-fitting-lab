@@ -269,12 +269,11 @@ try {
         await page.waitForFunction(() => !window.__lab.ready);
         assert(await page.locator("#file").isDisabled());
         await page.waitForTimeout(700);
+        const beforeRestore = await page.evaluate(() => window.__lab.frames);
         await page.evaluate(() => window.__restoreTestContext());
-        await page.waitForFunction(() => window.__lab.ready);
-        const afterRestore = await page.evaluate(() => window.__lab.frames);
         await page.waitForFunction(
-          (before) => window.__lab.frames > before,
-          afterRestore,
+          (before) => window.__lab.ready && window.__lab.frames > before,
+          beforeRestore,
           { timeout: 15000 },
         );
         assert.equal(

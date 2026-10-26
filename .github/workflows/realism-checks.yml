@@ -1,5 +1,8 @@
 name: Realism quality gates
 on: [push, pull_request]
+concurrency:
+  group: realism-${{ github.ref }}
+  cancel-in-progress: true
 permissions:
   contents: read
 jobs:

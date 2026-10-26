@@ -1,0 +1,11 @@
+import './restore.mjs';
+import fs from 'node:fs';
+import * as esbuild from 'esbuild';
+const glb=fs.readFileSync('generated/shape/shape-study.glb');
+const reference=fs.readFileSync('assets/references/contrast-magenta.webp');
+fs.writeFileSync('generated/shape-data.js',`export const asset=${JSON.stringify(glb.toString('base64'))};export const reference=${JSON.stringify('data:image/webp;base64,'+reference.toString('base64'))};`);
+const output=await esbuild.build({entryPoints:['shape/src/app.js'],bundle:true,write:false,minify:true,format:'iife',target:'es2022',legalComments:'inline'});
+const fonts=[400,500,600].map(w=>`@font-face{font-family:Plex;font-weight:${w};src:url(data:font/ttf;base64,${fs.readFileSync('vendor/fonts/IBM-Plex-Sans-Arabic-'+w+'.ttf').toString('base64')}) format('truetype');font-display:swap}`).join('');
+const notices=['vendor/three/LICENSE','vendor/body-model/LICENSE','vendor/fonts/OFL.txt'].map(p=>fs.readFileSync(p,'utf8')).join('\n');
+let html=fs.readFileSync('shape/src/shell.html','utf8').replace('/* STYLES */',()=>fonts+fs.readFileSync('shape/src/style.css','utf8')).replace('/* APP */',()=>output.outputFiles[0].text.replaceAll('</script','<\\/script')).replace('</body>',()=>`<!-- THIRD PARTY NOTICES\n${notices.replaceAll('--','—')}\n--></body>`);
+fs.mkdirSync('dist',{recursive:true});fs.writeFileSync('dist/maka-shape-review-v0.7.html',html);console.log('Built static shape review',html.length);

@@ -1,0 +1,24 @@
+{
+  "checkpoint": "0.7 static shape review",
+  "assetSha256": "9b42f8404a35e8a07eab2e006b3a4ecf38e386e126323832a29ff2d10574c567",
+  "visibleMannequin": true,
+  "mannequinCalibrationAccepted": false,
+  "construction": "Revised torso depth and shoulder profiles, wrist-tapered sleeves, separate inner, finite-width ribbons, textile cuff with raised motifs. Based on approximate connected-sleeve authoring, not an authentic product pattern.",
+  "simulation": false,
+  "staticProximityCorrection": "Nearest-body-normal projection of evaluated mesh vertices to 6mm where signed nearest-plane distance below 4mm. Heuristic, not continuous surface collision proof.",
+  "correctedVertices": {
+    "inner": 311,
+    "outer": 1884
+  },
+  "bodyFacesMasked": false,
+  "likenessAccepted": false,
+  "fitAccepted": false,
+  "stillRequired": [
+    "human visual approval",
+    "less generic silhouette and natural drape",
+    "closer reference trim and ribbon detailing",
+    "calibrated product dimensions before fit claims",
+    "surface-level clearance and full garment physical validation"
+  ],
+  "testsScope": "Offline Chromium desktop/mobile viewport smoke checks only; not a real phone or visual likeness acceptance"
+}

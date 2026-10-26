@@ -1,0 +1,37 @@
+{
+  "sha256": "1f0170577fbd49b9d5bb7ae3554b980e4b4d60c6adc06b8cdcac8cc76ee81459",
+  "parts": [
+    "shape07-01.b64",
+    "shape07-02.b64",
+    "shape07-03.b64",
+    "shape07-04.b64",
+    "shape07-05.b64",
+    "shape07-06.b64",
+    "shape07-07.b64",
+    "shape07-08.b64",
+    "shape07-09.b64",
+    "shape07-10.b64",
+    "shape07-11.b64",
+    "shape07-12.b64",
+    "shape07-13.b64",
+    "shape07-14.b64",
+    "shape07-15.b64",
+    "shape07-16.b64",
+    "shape07-17.b64",
+    "shape07-18.b64",
+    "shape07-19.b64",
+    "shape07-20.b64",
+    "shape07-21.b64",
+    "shape07-22.b64"
+  ],
+  "files": [
+    {
+      "name": "shape-study.glb",
+      "sha256": "9b42f8404a35e8a07eab2e006b3a4ecf38e386e126323832a29ff2d10574c567"
+    },
+    {
+      "name": "shape-study.blend",
+      "sha256": "ce7e9cc191bed670dba619e31889d4d26c849765246b1864b1754242e352d61d"
+    }
+  ]
+}

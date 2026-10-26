@@ -17,7 +17,9 @@
     "test:lab:browser": "node lab/tests/browser.mjs",
     "start:lab": "python3 -m http.server 4173",
     "pretest:lab": "node lab/restore-pilot.mjs",
-    "test:motion": "python3 -m unittest discover -s tools/blender -p test_motion_metrics.py"
+    "test:motion": "python3 -m unittest discover -s tools/blender -p test_motion_metrics.py",
+    "build:shape": "npm run build && node shape/build.mjs",
+    "test:shape:browser": "node shape/check.mjs"
   },
   "dependencies": {
     "three": "0.180.0"

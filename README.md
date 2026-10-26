@@ -1,3 +1,9 @@
+## Shape review 0.7 — static construction revision (not approved likeness)
+
+The 0.6 visual asset was rejected as a realistic product match. A new **static shape-review page** puts the revised garment on a visible fixed mannequin, alongside the original reference at useful size. Neutral clay is the default; illustrative color is secondary. Revised shoulders/inner/sleeves, flat ribbon surfaces and approximate decorated textile cuffs are included. The silhouette and drape still need visual work: **no likeness, authentic pattern, physics, surface-clearance or size-fit acceptance is claimed.**
+
+Run `npm run build:shape`, then open `dist/maka-shape-review-v0.7.html`. Full GLB, Blender source and authoring/build/test programs are included. See `docs/realism/CHECKPOINT-0.7.md` and `verification/shape-07/`. Existing baseline and lab are preserved; no deployment or merge to main is implied.
+
 ## Current checkpoint 0.6 — hardening, construction and efficiency
 
 A conservative pre-decode static GLB policy, source-bound simulation evidence, resource ownership and demand rendering now accompany a lighter 87,848-triangle construction draft with approximate neck/cuff/stitch details. The guided skirt bake has been rerun with consecutive free-vertex motion metrics and final-surface diagnostics. A new full-outer solve was actually executed and **rejected**; it is not the default. One reference size only; no calibrated fit or physical-phone acceptance. See `docs/realism/CHECKPOINT-0.6.md`, `verification/v0.6/`, and the missing-input `GARMENT-SPEC-TEMPLATE.json`.

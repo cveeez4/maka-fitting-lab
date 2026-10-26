@@ -302,6 +302,16 @@ try {
     });
     await context.close();
   }
+} catch (error) {
+  if (process.env.GITHUB_ACTIONS) {
+    const text = String(error.stack || error)
+      .slice(0, 7000)
+      .replaceAll("%", "%25")
+      .replaceAll("\r", "%0D")
+      .replaceAll("\n", "%0A");
+    console.log("::error title=Browser quality gate::" + text);
+  }
+  throw error;
 } finally {
   await browser.close();
 }

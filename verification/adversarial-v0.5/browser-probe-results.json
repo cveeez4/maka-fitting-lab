@@ -1,0 +1,13 @@
+{
+  "id": "PROVENANCE-01",
+  "result": "REPRODUCED",
+  "evidence": {
+    "source": "imported",
+    "displayedName": "unrelated-one-triangle.glb",
+    "triangles": 1,
+    "stillAttachedPilotReportFrames": 100,
+    "visibleReportText": "Blender 4.5.3 LTS · 100 إطارًا · حركة RMS في آخر 10 إطارات: 0.2 مم · نقاط تشخيصية لاختراق الجسم أكبر من 3 مم: 214.",
+    "reportSectionPresent": true
+  },
+  "finding": "The bundled pilot simulation report remains accessible for an unrelated imported GLB; report and source are not scoped together."
+}

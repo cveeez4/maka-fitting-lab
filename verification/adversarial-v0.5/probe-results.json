@@ -1,0 +1,85 @@
+[
+  {
+    "id": "IMPORT-01",
+    "probe": "Oversized POSITION accessor with one indexed triangle, inconsistent with its 36-byte bufferView",
+    "bytes": 724,
+    "preflight": {
+      "triangles": 1,
+      "materials": 1,
+      "textures": 0
+    },
+    "declaredPositionFloatBytes": 12000000000,
+    "loaded": false,
+    "finding": "Preflight accepts inconsistent accessor bounds and unbounded vertex allocation declarations; not sent to loader."
+  },
+  {
+    "id": "IMPORT-01b",
+    "probe": "Zero-initialized POSITION accessor without bufferView, one indexed triangle",
+    "bytes": 700,
+    "preflight": {
+      "triangles": 1,
+      "materials": 1,
+      "textures": 0
+    },
+    "declaredPositionFloatBytes": 12000000000,
+    "loaded": false,
+    "finding": "Preflight accepts it; installed GLTFLoader.loadAccessor constructs a typed array of count × itemSize for this branch. Source-confirmed allocation risk; oversized case deliberately not executed."
+  },
+  {
+    "id": "IMPORT-02",
+    "probe": "Actual GLTFLoader parse of ten GPU instances sharing one triangle",
+    "preflight": {
+      "triangles": 1,
+      "materials": 1,
+      "textures": 0
+    },
+    "postLoadReportedTriangles": 1,
+    "actualDrawnTriangles": 10,
+    "instances": 10,
+    "finding": "Both budget checks omit InstancedMesh.count. A small file can under-report actual rendering cost."
+  },
+  {
+    "id": "IMPORT-03",
+    "probe": "Valid embedded 4096×4096 PNG, never decoded or uploaded to GPU",
+    "glbBytes": 87792,
+    "pngBytes": 65299,
+    "preflight": {
+      "triangles": 1,
+      "materials": 1,
+      "textures": 1
+    },
+    "policyDimension": 2048,
+    "actualDimension": 4096,
+    "finding": "The 2K limit is checked only after GLTFLoader decodes the image. Compressed file size does not bound decoded memory."
+  },
+  {
+    "id": "PHYSICS-01",
+    "probe": "Reproduce the report endpoint-difference formula for a synthetic oscillation",
+    "positionsAt90_95_100Meters": [
+      0,
+      0.1,
+      0
+    ],
+    "reportedEndpointRmsMeters": 0,
+    "maximumIntermediateExcursionMeters": 0.1,
+    "finding": "Frames 90 and 100 can match while intervening frames move. Current rmsMotionLast10FramesMeters is an endpoint delta, not per-step RMS over ten frames."
+  },
+  {
+    "id": "PHYSICS-02",
+    "probe": "Pinned-vertex dilution of full-mesh RMS",
+    "pinnedVertices": 5431,
+    "totalVertices": 8813,
+    "syntheticFreeVertexMotionMeters": 0.01,
+    "reportedWholeMeshRmsMeters": 0.006194766149931068,
+    "finding": "Anchored vertices dilute the convergence statistic. Must evaluate free vertices separately."
+  },
+  {
+    "id": "BUDGET-01",
+    "probe": "Analytical maximum texture budget, no textures allocated",
+    "allowedTextures": 24,
+    "allowedDimension": 2048,
+    "baseRGBABytes": 402653184,
+    "withMipmapsApproxBytes": 536870912,
+    "finding": "Per-texture caps permit ~384 MiB RGBA (~512 MiB with mipmaps), before other GPU buffers. No total texel/byte budget."
+  }
+]

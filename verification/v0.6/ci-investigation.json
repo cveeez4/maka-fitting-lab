@@ -20,6 +20,14 @@
       "diagnostic": "offscreen frame-stop assertion",
       "rootCause": "scrolling to the footer did not guarantee that a tall desktop viewport no longer intersected the canvas",
       "fix": "use a shorter temporary viewport, explicitly assert nonintersection, then measure pause/resume; do not remove pause assertion"
+    },
+    {
+      "commit": "cd9c08179b2aaeb69deb8bd4558e4cddce3ec160",
+      "run": "https://github.com/cveeez4/maka-fitting-lab/actions/runs/40381775815",
+      "result": "failure",
+      "diagnostic": "rotation frame-count assertion after fixed 1000 ms sleep",
+      "remediation": "wait for an observed frame with a bounded timeout instead of assuming software GPU timing; retain actual frame-count assertion",
+      "localMatchedBrowser": "same pinned Playwright Chromium 141 passed the previous functional suite locally"
     }
   ],
   "currentState": "fix submitted for rerun; this history alone does not certify the latest run"

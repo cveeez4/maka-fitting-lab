@@ -220,7 +220,12 @@ try {
     await page.locator("#rotate").click();
     await page.locator("#viewport").scrollIntoViewIfNeeded();
     const rotating = await page.evaluate(() => window.__lab.frames);
-    await page.waitForTimeout(1000);
+    // Observe a real frame, rather than assuming a slow software runner draws within 1 second.
+    await page.waitForFunction(
+      (before) => window.__lab.frames > before,
+      rotating,
+      { timeout: 15000 },
+    );
     assert((await page.evaluate(() => window.__lab.frames)) > rotating);
     // Rotation keeps demand rendering active; offscreen rendering must still pause.
     // A tall desktop viewport can still intersect the canvas even at the footer.
@@ -239,7 +244,11 @@ try {
     await page.waitForTimeout(600);
     assert((await page.evaluate(() => window.__lab.frames)) - offscreen <= 1);
     await page.locator("#viewport").scrollIntoViewIfNeeded();
-    await page.waitForTimeout(700);
+    await page.waitForFunction(
+      (before) => window.__lab.frames > before,
+      offscreen,
+      { timeout: 15000 },
+    );
     assert((await page.evaluate(() => window.__lab.frames)) > offscreen);
     await page.locator("#rotate").click();
     await page.setViewportSize({ width, height });
@@ -262,7 +271,12 @@ try {
         await page.waitForTimeout(700);
         await page.evaluate(() => window.__restoreTestContext());
         await page.waitForFunction(() => window.__lab.ready);
-        await page.waitForTimeout(600);
+        const afterRestore = await page.evaluate(() => window.__lab.frames);
+        await page.waitForFunction(
+          (before) => window.__lab.frames > before,
+          afterRestore,
+          { timeout: 15000 },
+        );
         assert.equal(
           await page.evaluate(() => window.__lab.shadowCaching),
           true,

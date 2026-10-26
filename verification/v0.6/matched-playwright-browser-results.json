@@ -1,0 +1,76 @@
+[
+  {
+    "viewport": "desktop",
+    "browserVersion": "141.0.7390.37",
+    "size": [
+      1440,
+      1050
+    ],
+    "result": "PASS",
+    "renderMetrics": {
+      "frames": 213,
+      "samples": 180,
+      "medianMs": 16.69999999999709,
+      "p95Ms": 949.9000000000087,
+      "worstMs": 14449.399999999994,
+      "includesLongStalls": true,
+      "firstFrameMs": 632.6000000005588,
+      "physicalDeviceBenchmark": false
+    },
+    "physicalPhoneBenchmark": false,
+    "contextRecovery": "PASS: real WebGL lose/restore extension, environment rebuilt",
+    "checks": [
+      "strict budget default asset <100K triangles",
+      "20 consecutive free-vertex motion samples; fit not accepted",
+      "nonempty distinct fabric maps",
+      "stable control screenshots and changed texture comparison",
+      "back/side/cuff visual captures",
+      "light angle/exposure/reset",
+      "quality resolution modes",
+      "source-bound provenance on legacy/import/restore",
+      "three owned imports",
+      "external URL, instancing and huge accessor rejected preserving model",
+      "demand rendering idle stop, rotation restart and offscreen pause",
+      "reference modal/Escape",
+      "PNG export",
+      "no network/storage/errors/overflow"
+    ]
+  },
+  {
+    "viewport": "mobile",
+    "browserVersion": "141.0.7390.37",
+    "size": [
+      390,
+      844
+    ],
+    "result": "PASS",
+    "renderMetrics": {
+      "frames": 193,
+      "samples": 176,
+      "medianMs": 16.69999999999709,
+      "p95Ms": 766.5999999999913,
+      "worstMs": 9866.199999999997,
+      "includesLongStalls": true,
+      "firstFrameMs": 596.5999999996275,
+      "physicalDeviceBenchmark": false
+    },
+    "physicalPhoneBenchmark": false,
+    "contextRecovery": "not attempted on this viewport",
+    "checks": [
+      "strict budget default asset <100K triangles",
+      "20 consecutive free-vertex motion samples; fit not accepted",
+      "nonempty distinct fabric maps",
+      "stable control screenshots and changed texture comparison",
+      "back/side/cuff visual captures",
+      "light angle/exposure/reset",
+      "quality resolution modes",
+      "source-bound provenance on legacy/import/restore",
+      "three owned imports",
+      "external URL, instancing and huge accessor rejected preserving model",
+      "demand rendering idle stop, rotation restart and offscreen pause",
+      "reference modal/Escape",
+      "PNG export",
+      "no network/storage/errors/overflow"
+    ]
+  }
+]

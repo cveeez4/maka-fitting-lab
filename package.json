@@ -1,0 +1,23 @@
+{
+  "name": "maka-virtual-fitting",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Arabic offline-capable experimental 3D fitting prototype for MAKA",
+  "scripts": {
+    "build": "node build.mjs",
+    "start": "python3 -m http.server 4173",
+    "test": "node --test tests/geometry.test.mjs",
+    "prebuild": "node restore-assets.mjs",
+    "pretest": "node restore-assets.mjs",
+    "prestart": "npm run build",
+    "test:browser": "node tests/browser.mjs"
+  },
+  "dependencies": {
+    "three": "0.180.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12",
+    "playwright": "1.56.1"
+  }
+}

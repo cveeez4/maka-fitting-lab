@@ -1,19 +1,111 @@
-# MAKA · مكة — Fitting Lab
+> **Repository distribution:** The owner has explicitly requested that the complete project, including reference assets, be kept in this public repository during development. Public availability is not proof of third-party commercial rights. See asset notices.
 
-Private development repository for an Arabic-first virtual fitting prototype.
+## Reproduce the complete baseline
 
-## Current baseline
+```sh
+npm install
+npm run build
+npm test
+npm start
+```
 
-Version 0.2 is a working offline Three.js prototype with four distinct procedural abaya constructions, measurement controls, and static reference photographs. It is an illustrative experiment, not a validated fitting system or cloth simulation.
+`restore-assets.mjs` restores original binary assets and vendored libraries from checksummed base64 pack parts using Node built-ins. Assets are fully included, not redacted or downloaded from third-party URLs. The pack is only a transport format for the connected repository tool; it is not encryption or access control. `npm run build` produces the same standalone offline HTML in `dist/maka-demo.html`.
 
-## Next milestone: realistic garment pilot
+Baseline v0.2 is preserved on `main`. New realism work will happen separately; there is no hosted deployment yet.
 
-Start with one open abaya with a light inner dress and decorative cuffs. Establish a properly constructed garment asset or sewing pattern, realistic materials and lighting, and a mobile performance budget before expanding the catalog. Visual realism and measurement accuracy must be tested separately.
+# مكة · MAKA Fitting Lab
 
-## Privacy and asset rights
+إصدار 0.2: نموذج تجريبي شغّال لاختبار رحلة المقاسات وأربع قصّات مختلفة مستوحاة من الصور المرفقة. **ليس نظام توصية مقاس، ولا محاكاة تفصيل معتمدة.**
 
-Do not publish user-supplied photographs, measurements, or unverified body assets. Reference photographs are for private review only; redistribution and commercial rights have not been established. Do not commit credentials or tokens.
+## جرّبه فورًا
 
-## Status
+افتح `index.html` في Chrome أو Edge على الكمبيوتر. الملف مستقل: الخط والمكتبات والجسم مضمّنين؛ لا يحتاج إنترنت أو تسجيل دخول. لو عارض الملفات على الموبايل لا يشغّل JavaScript، افتحه في متصفح كامل أو استخدم استضافة HTTPS ثابتة.
 
-Repository initialized. Baseline source import and a separate realism development branch are pending.
+للتشغيل محليًا:
+
+```sh
+python3 -m http.server 4173
+```
+
+ثم افتح `http://localhost:4173`. لا يلزم Node لتجربة الملف المبني. للمشاركة على الموبايل، استضف الملفات على خدمة static hosting؛ لا يوجد نشر عام تلقائي في هذا التسليم.
+
+## جرّب بالترتيب
+
+1. اختَر واحدًا من الموديلات الأربعة أعلى الصفحة. اضغط الصورة المرجعية أسفل المجسّم لتكبيرها.
+2. غيّر الطول والصدر والوسط والأرداف والكتف، أو اختر نموذجًا محفوظًا للتجربة.
+2. بدّل بين «القطعة» و«المنيكان»، وجرّب أمام / جانب أو السحب للدوران.
+3. افتح «القطعة» وغيّر اللون، طول العباية، الوسع الإضافي، وطول الكم.
+4. نزّل JSON للإعدادات إذا رغبت؛ هذا تنزيل محلي صريح، وليس إرسال بيانات.
+5. لا ترسل ملف الإعدادات الحقيقي في issue عامة. استخدم قيمًا مصطنعة للإبلاغ عن المشاكل.
+
+## المنفّذ بالفعل
+
+- واجهة عربية RTL، ألوان دليل الهوية المرفق، وخط IBM Plex Sans Arabic.
+- جسم أنثوي بارامتري من مكتبة `ahzs645/body-model`، وليس أشكالًا بدائية موضوعة فوق بعضها.
+- إعادة بناء شبكة الجسم عند تغيير المقاسات. الطول النهائي موحّد هندسيًا إلى الطول المدخل.
+- أربع قصّات هندسية مستقلة: واسعة بخطّين وياقة، مفتوحة بداخلية فاتحة وأساور، حزام بربطة وكم مزموم، ومفتوحة بحواف فضية.
+- عشر صور مرجعية للألوان مرتبطة بالتصميم؛ لا تُمدّد الصور ولا تُعرض على أنها try-on.
+- الأطوال والأكمام والوسع متغيرة؛ في عرض القطعة فقط يُخفى الرأس وجزء من شبكة الجذع المغطاة لتقليل التداخلات، وليس اعتمادًا على حل تصادم قماش. عرض المنيكان يعرض الجسم الأصلي كاملاً.
+- عرض WebGL باستخدام Three.js وOrbitControls؛ بديل خطأ واضح عند فشل الرسوم.
+- فحص المدخلات، أمثلة نسب، مساعدة قياس، إعادة ضبط، وتنزيل إعدادات.
+- لا رفع صور شخصية، لا حسابات، لا وزن مطلوب، لا حفظ تلقائي، لا تحليلات ولا طلبات شبكة من التطبيق.
+
+## غير المنفّذ — حدود لا نخبّيها
+
+- لا Anny أو clad-body أو GarmentCode أو محاكاة قماش في البناء الحالي.
+- محيطات الجسم الناتجة لم تُعاير مقابل الأرقام المدخلة؛ إدخال رقم صحيح لا يعني تطابق الشبكة معه بدقة. فقط الطول يُوحّد هندسيًا في هذه النسخة.
+- القيم غير المدخلة في مكتبة الجسم تستخدم متوسطات upstream؛ لا يتم جمع الوزن من العميلة ولا استنتاج وزنها.
+- القطعة تقريب من الصور وليست باترون مكة. صور المرجع صور ثابتة مقدمة من المستخدم وليست نتيجة محاكاة. الطيات هندسية، لا فيزياء خامة ولا قياس شد أو تصادم معتمد.
+- حدود المقاسات الحالية لتجربة المحرك وليست تقسيمًا لعميلات مكة أو حدود الخدمة.
+- طول العباية يُخفض عند اللزوم لعدم النزول أسفل مستوى الأرض في النموذج؛ الحد يتغير مع الطول.
+- يحتاج فحص مصدر أصول الجسم والبيانات المرفقة قبل الاستعمال التجاري رغم وجود MIT بالمستودع.
+- لا checkout أو ربط متجر أو تخزين مقاسات أو نشر سحابي في النسخة الحالية.
+
+## تطوير وبناء
+
+المتطلبات: Node 22+، Python 3 للخادم المحلي، npm.
+
+```sh
+npm install
+npm run build
+npm test
+npm start
+```
+
+البناء يولّد `index.html` و`dist/maka-demo.html` متطابقين من `src/`. يضمّن الجسم والخط والمكتبات داخل HTML لكي يعمل بلا CDN. لا تعدّل الملف المولّد يدويًا.
+
+اختبارات المتصفح (اختيارية، تحتاج Playwright وChromium):
+
+```sh
+npm install --no-save playwright
+CHROMIUM_PATH=/path/to/chromium node tests/browser.mjs
+```
+
+## خريطة الملفات
+
+- `src/app.js`: الواجهة، إنشاء الجسم، العباية التوضيحية، المشهد، الإدخال والتنزيل.
+- `src/measurements.js`: مخطط المدخلات والتحويل إلى معاملات الجسم وحسابات العباية.
+- `src/shell.html` / `src/style.css`: التصميم.
+- `vendor/`: الاعتماديات والأصول مع تراخيصها الأصلية.
+- `docs/PRD.md`: نطاق المنتج وتجربة العميلة.
+- `docs/ARCHITECTURE.md`: المعمارية الحالية والمستهدفة.
+- `docs/DECISIONS.md`: القرارات والبدائل.
+- `docs/ROADMAP.md`: المهام وشروط عبور المراحل.
+- `docs/TEST-PLAN.md`: الاختبارات وما لا تثبته.
+- `docs/PRIVACY-AND-LICENSES.md`: الخصوصية والتراخيص.
+- `qa/`: سجل الاختبارات الآلية وصور مراجعة التطوير.
+
+## حالة GitHub
+
+محاولة إنشاء المستودع الخاص `cveeez4/maka-virtual-fitting` رجعت HTTP 403: `Resource not accessible by personal access token`.
+**لم يتم إنشاء ريبو، أو رفع ملفات، أو نشر موقع على GitHub.** الملفات جاهزة لرفعها بعد منح اتصال GitHub صلاحية إنشاء مستودع، أو إتاحة مستودع موجود قابل للكتابة. لا ترسل أي token في الشات.
+
+المقترح: مستودع Private. لا تغيّر الرؤية إلى Public لمجرد تسهيل الاستضافة.
+
+## المصادر والتراخيص
+
+راجع `THIRD_PARTY_NOTICES.md` وملفات LICENSE الأصلية في vendor. لم يُحدد ترخيص نشر عام لكود المشروع الخاص؛ تراخيص المكونات الأصلية لا تتغير.
+
+## صور المرجع وحقوق المشاركة
+
+الصور المرفقة مضمّنة داخليًا للمراجعة الخاصة فقط. توفير المستخدم للصور لا يثبت ملكية حقوق النشر أو إذن إعادة النشر العام. لا ترفع هذا البناء أو مجلد الصور أو لقطات الاختبار علنًا قبل التحقق من الإذن. تفاصيل المرجع في `docs/V0.2-CHANGES.md`.

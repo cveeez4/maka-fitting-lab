@@ -1,0 +1,11 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {fields,defaults,validateValue,ellipseRadii,bodyCoefficients,garmentProfile} from '../src/measurements.js';
+import {reconstructVertices} from '../vendor/body-model/src/shape.js';
+import {loadBodyModelFromDisk} from '../vendor/body-model/src/node.js';
+const model=await loadBodyModelFromDisk(undefined,{gender:'female'});
+test('input boundaries reject blank, non-finite and out-of-range values',()=>{for(const [k,f]of Object.entries(fields)){assert(validateValue(k,f.min));assert(validateValue(k,f.max));for(const v of ['',f.min-1,f.max+1,NaN,Infinity,'hello'])assert(!validateValue(k,v));}});
+test('ellipse perimeter matches the requested illustrative circumference',()=>{for(const c of [.75,1,1.5,1.95]){const [a,b]=ellipseRadii(c);const p=Math.PI*(3*(a+b)-Math.sqrt((3*a+b)*(a+3*b)));assert(Math.abs(p-c)<1e-10);}});
+test('directly mapped measurements reach the expected coefficients',()=>{const c=bodyCoefficients(model,defaults);for(const [name,k]of [['height','height'],['chestGirth','chest'],['waistGirth','waist'],['hipGirth','hips'],['shoulderWidth','shoulder']])assert.equal(c[model.baseModel.coefficientNames.indexOf(name)],defaults[k]);assert.equal(c.length,17);assert(c.every(Number.isFinite));});
+test('upstream female mesh reconstructs finite vertices and valid indices',()=>{const v=reconstructVertices(model.baseModel,model.coefficients,bodyCoefficients(model,defaults));assert(v.length>10000);assert(v.every(Number.isFinite));for(const index of model.indices)assert(index<v.length/3);});
+test('each requested body input modifies the actual vertex buffer',()=>{const v=reconstructVertices(model.baseModel,model.coefficients,bodyCoefficients(model,defaults));for(const k of Object.keys(fields)){const altered=reconstructVertices(model.baseModel,model.coefficients,bodyCoefficients(model,{...defaults,[k]:defaults[k]+5}));assert(altered.some((n,i)=>Math.abs(n-v[i])>1e-6),k);}});
+test('supported extreme inputs produce finite body and garment data',()=>{for(const edge of ['min','max']){const s={...defaults};for(const [k,f]of Object.entries(fields))s[k]=f[edge];const v=reconstructVertices(model.baseModel,model.coefficients,bodyCoefficients(model,s));assert(v.every(Number.isFinite));assert(Object.values(garmentProfile(s)).every(Number.isFinite));}});

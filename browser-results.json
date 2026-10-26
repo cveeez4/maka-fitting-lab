@@ -1,0 +1,52 @@
+[
+  {
+    "name": "desktop",
+    "viewport": [
+      1440,
+      1050
+    ],
+    "result": "PASS",
+    "checks": [
+      "four unique constructions and reference images",
+      "reference dialog opens and closes with Escape",
+      "3D WebGL rendered",
+      "offline: zero network requests",
+      "no horizontal overflow",
+      "body height and presets",
+      "invalid input rejected",
+      "body / dress and front / side",
+      "garment color, ease, sleeve and length",
+      "rotation toggle",
+      "JSON download",
+      "help expansion",
+      "reset",
+      "no localStorage writes",
+      "zero uncaught errors"
+    ]
+  },
+  {
+    "name": "mobile",
+    "viewport": [
+      390,
+      844
+    ],
+    "result": "PASS",
+    "checks": [
+      "four unique constructions and reference images",
+      "reference dialog opens and closes with Escape",
+      "3D WebGL rendered",
+      "offline: zero network requests",
+      "no horizontal overflow",
+      "body height and presets",
+      "invalid input rejected",
+      "body / dress and front / side",
+      "garment color, ease, sleeve and length",
+      "rotation toggle",
+      "JSON download",
+      "help expansion",
+      "reset",
+      "no localStorage writes",
+      "zero uncaught errors"
+    ]
+  }
+]

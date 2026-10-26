@@ -1,0 +1,14 @@
+✔ input boundaries reject blank, non-finite and out-of-range values (1.411347ms)
+✔ ellipse perimeter matches the requested illustrative circumference (0.532273ms)
+✔ directly mapped measurements reach the expected coefficients (0.447548ms)
+✔ upstream female mesh reconstructs finite vertices and valid indices (18.481793ms)
+✔ each requested body input modifies the actual vertex buffer (31.710543ms)
+✔ supported extreme inputs produce finite body and garment data (6.115345ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 155.206848

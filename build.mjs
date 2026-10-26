@@ -1,0 +1,15 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import * as esbuild from 'esbuild';
+const root=process.cwd(),assetPath='vendor/body-model/models';
+fs.mkdirSync('generated',{recursive:true});
+const b64=p=>fs.readFileSync(path.join(assetPath,p)).toString('base64');
+fs.writeFileSync('generated/body-data.js',`export const baseModel=${fs.readFileSync(assetPath+'/base_model.json','utf8')};\nexport const statistics=${fs.readFileSync(assetPath+'/female_model.json','utf8')};\nexport const coefficientBase64=${JSON.stringify(b64('female_coefficients.bin'))};\nexport const indexBase64=${JSON.stringify(b64('indices.bin'))};\n`);
+fs.writeFileSync('generated/photos.js','export const photos='+JSON.stringify(Object.fromEntries(fs.readdirSync('assets/references').filter(n=>n.endsWith('.webp')).map(n=>[n.slice(0,-5),'data:image/webp;base64,'+fs.readFileSync('assets/references/'+n).toString('base64')]))));
+const fontCss=[400,500,600].map(w=>`@font-face{font-family:Plex; font-style:normal;font-weight:${w};font-display:swap;src:url(data:font/ttf;base64,${fs.readFileSync('vendor/fonts/IBM-Plex-Sans-Arabic-'+w+'.ttf').toString('base64')}) format('truetype');}`).join('');
+const output=await esbuild.build({entryPoints:['src/app.js'],bundle:true,write:false,minify:true,format:'iife',target:'es2022',legalComments:'inline',alias:{three:path.resolve('vendor/three/build/three.module.js')}});
+let html=fs.readFileSync('src/shell.html','utf8').replace('/* STYLES */',()=>fontCss+fs.readFileSync('src/style.css','utf8')).replace('/* APP */',()=>output.outputFiles[0].text.replaceAll('</script','<\\/script'));
+const notices=['vendor/three/LICENSE','vendor/body-model/LICENSE','vendor/fonts/OFL.txt'].map(p=>fs.readFileSync(p,'utf8')).join('\n');
+html=html.replace('</body>',()=> '<!--\nTHIRD PARTY LICENSE NOTICES\n'+notices.replaceAll('--','—')+'\n--></body>');
+fs.mkdirSync('dist',{recursive:true});fs.writeFileSync('dist/maka-demo.html',html);fs.copyFileSync('dist/maka-demo.html','index.html');
+console.log('Built offline HTML:',(Buffer.byteLength(html)/1024/1024).toFixed(2),'MB');

@@ -1,0 +1,10 @@
+node_modules/
+generated/
+dist/
+index.html
+vendor/
+assets/
+qa/
+.env
+.env.*
+.DS_Store

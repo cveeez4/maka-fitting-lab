@@ -1,0 +1,14 @@
+{
+  "format": "gzip-json-base64-v1",
+  "sha256": "9abf6dad3207363333184f4d58ff83f62d4c34a2fb46100c5d6e04eb2a3156e1",
+  "parts": [
+    "assets-01.b64",
+    "assets-02.b64",
+    "assets-03.b64",
+    "assets-04.b64",
+    "assets-05.b64",
+    "assets-06.b64",
+    "assets-07.b64"
+  ],
+  "fileCount": 41
+}

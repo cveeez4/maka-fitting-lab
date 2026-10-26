@@ -1,3 +1,5 @@
+> Distribution update: the repository owner explicitly requested publication of the complete development project, including reference assets, in this public repository. The pack is not encryption. This does not grant a general reuse license to the photographs or resolve third-party commercial provenance. Earlier private-review wording below describes the original delivery, not the current repository visibility.
+
 # Third-party notices
 
 This experimental project includes third-party code and assets; their original licenses remain in force. The custom project code has not been assigned a public open-source license.

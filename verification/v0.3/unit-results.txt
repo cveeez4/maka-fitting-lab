@@ -1,0 +1,14 @@
+✔ embedded GLB 2.0 accepted and triangle count reported (1.598089ms)
+✔ malformed binary is rejected (4.863583ms)
+✔ external buffers and images blocked before loader parsing (0.633148ms)
+✔ compressed assets requiring unconfigured decoders rejected (0.352686ms)
+✔ excessive triangle and material counts rejected (0.520754ms)
+✔ finite vertices and texture dimension inspected after decoding (0.483131ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 84.189825

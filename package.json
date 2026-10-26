@@ -11,7 +11,11 @@
     "prebuild": "node restore-assets.mjs",
     "pretest": "node restore-assets.mjs",
     "prestart": "npm run build",
-    "test:browser": "node tests/browser.mjs"
+    "test:browser": "node tests/browser.mjs",
+    "build:lab": "npm run build && node lab/build.mjs",
+    "test:lab": "node --test lab/tests/policy.test.mjs",
+    "test:lab:browser": "node lab/tests/browser.mjs",
+    "start:lab": "python3 -m http.server 4173"
   },
   "dependencies": {
     "three": "0.180.0"

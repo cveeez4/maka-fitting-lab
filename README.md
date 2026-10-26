@@ -1,3 +1,7 @@
+## Realism pilot branch
+
+This branch adds a separate integration/material lab in `lab/`. Run `npm run build:lab` and open `dist/maka-realism-lab.html`. The default geometry is still v0.2, **not** a completed realistic garment. Importing a self-contained GLB is supported locally. See `docs/realism/PLAN.md` and `lab/README.md`. Baseline `main` remains the rollback point.
+
 > **Repository distribution:** The owner has explicitly requested that the complete project, including reference assets, be kept in this public repository during development. Public availability is not proof of third-party commercial rights. See asset notices.
 
 ## Reproduce the complete baseline

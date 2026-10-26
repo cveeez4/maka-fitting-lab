@@ -13,9 +13,10 @@
     "prestart": "npm run build",
     "test:browser": "node tests/browser.mjs",
     "build:lab": "npm run build && node lab/build.mjs",
-    "test:lab": "node --test lab/tests/policy.test.mjs",
+    "test:lab": "node --test lab/tests/policy.test.mjs lab/tests/pilot.test.mjs",
     "test:lab:browser": "node lab/tests/browser.mjs",
-    "start:lab": "python3 -m http.server 4173"
+    "start:lab": "python3 -m http.server 4173",
+    "pretest:lab": "node lab/restore-pilot.mjs"
   },
   "dependencies": {
     "three": "0.180.0"

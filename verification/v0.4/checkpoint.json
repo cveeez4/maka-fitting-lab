@@ -1,0 +1,27 @@
+{
+  "checkpoint": "0.4-guided-lower-skirt",
+  "blender": "4.5.3 LTS",
+  "frames": 100,
+  "triangles": 149436,
+  "connectedArmholes": 2,
+  "pinVertices": 5431,
+  "partialSimulationExecuted": true,
+  "fullGarmentSimulationAccepted": false,
+  "scope": "Lower skirt only; upper body and sleeves anchored; fixed inner dress",
+  "rmsMotionLast10FramesMm": 0.24767846261099535,
+  "nearestBodyPenetrationCandidates": 214,
+  "penetrationDiagnostic": "Nearest-body heuristic on raw vertices, not a certified collision/clearance check",
+  "calibratedFit": false,
+  "selfIntersectionsValidated": false,
+  "tests": {
+    "baselineUnitPassed": 6,
+    "labUnitPassed": 9,
+    "desktopBrowser": "PASS",
+    "mobileBrowser": "PASS",
+    "browserRendering": "Headless Chromium software GPU, not physical phone benchmark"
+  },
+  "offlineHtmlSha256": "9dc827936190bd3c557541263a8af6ef4ab58d369e12482f9b5362eed1ee5cc1",
+  "assetManifestSha256": "620185c0d94493d435852ada372b87ac6ec619cd60a4a24773891f72a13407a7",
+  "hostedDeployment": false,
+  "draftPr": 1
+}

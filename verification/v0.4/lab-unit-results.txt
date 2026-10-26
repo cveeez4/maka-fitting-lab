@@ -1,0 +1,17 @@
+✔ actual pilot GLB is embedded, finite-budget and contains no external resources (1.062604ms)
+✔ bake report records actual cloth movement and single-size limitations (0.252517ms)
+✔ packed baked asset matches its recorded SHA256 (3.845677ms)
+✔ embedded GLB 2.0 accepted and triangle count reported (1.169222ms)
+✔ malformed binary is rejected (1.036949ms)
+✔ external buffers and images blocked before loader parsing (0.45161ms)
+✔ compressed assets requiring unconfigured decoders rejected (0.243827ms)
+✔ excessive triangle and material counts rejected (0.344169ms)
+✔ finite vertices and texture dimension inspected after decoding (0.354312ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 121.199375

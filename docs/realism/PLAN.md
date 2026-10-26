@@ -1,45 +1,57 @@
-# Realism pilot — engineering checkpoint, not a finished realistic garment
+# Checkpoint 0.4 — connected draft + guided lower-skirt simulation
 
-## What is implemented in this branch
+## Implemented and actually executed
 
-- The complete v0.2 baseline remains unchanged in `src/` and `build.mjs`.
-- `lab/` is a separate offline viewer with a Three.js studio environment, three experimental fabric presets, front/side/detail camera, static reference photographs and local PNG export.
-- Its default geometry is explicitly the existing procedural v0.2 geometry. This checkpoint does **not** claim photorealistic reconstruction, an authored production pattern, or better fit.
-- Embedded GLB 2.0 assets can be imported from the user's device without network upload, external resources, or persistent storage. Imported materials are retained. Fabric and color overrides are disabled on imported assets. Normalizing the display height is not body fitting.
-- The importer rejects external buffers/images before loading, oversized files, unsupported compression and declared triangle/material budgets. Decoded vertices and texture dimensions are checked before display.
-- `tools/blender/bake_cloth.py` is an offline cloth-bake pipeline for an **authored input .blend scene** with reviewed pin weights and collision geometry. It has been syntax checked only: Blender is not installed here; no bake has run and no real garment result is shipped.
+- The complete v0.2 baseline remains on `main`; the work stays on the draft realism branch.
+- An original **geometric draft** of the open abaya now has two armholes and sleeves connected through shared vertices, material-region cuffs, draft UVs and explicit support weights. It is not a recovered or production sewing pattern.
+- Blender **4.5.3 LTS** has been installed and run on CPU. Authoring and actual 100-frame cloth runs completed; this is no longer an unexecuted Blender script.
+- **The shipped default frees only the lower skirt. The upper garment and sleeves are anchored; the inner dress is fixed.** Full-outer attempts were unstable/unsatisfactory and are retained as failed reports, not presented as successful full-garment simulation.
+- The selected static bake is embedded in the offline HTML, with a switch to compare it against v0.2 geometry. It is not a live browser solver and does not fit arbitrary measurements.
+- Full authored `.blend`, GLB and report are included in checksummed public transport parts under `lab/assets/`, restored by `lab/restore-pilot.mjs` during the build. No source/asset is redacted from this checkpoint; Blender itself is an independently installed development tool.
 
-## Why this order
+## Quality evidence and unresolved defects
 
-The v0.2 radial surface cannot reveal the actual pattern, armhole construction or fabric response from one product photograph. More lighting alone can make the mesh look shinier without making its construction true. The new viewer is the integration point for a properly authored garment asset and a separately reviewed offline drape; no live browser cloth simulation is assumed.
+See `verification/v0.4/simulation-report.json` for exact metrics and mesh counts. The guided run reaches a low last-ten-frame **RMS motion** under the engineering threshold. This is a limited settling diagnostic, not a quality or fit certificate.
 
-## Pilot garment
+The report still flags nearest-body penetration candidates. These are measured on raw simulation vertices before render smoothing and thickness. The detector is a nearest-surface signed-distance heuristic, not a complete triangle/triangle, body-clearance or self-intersection proof. The shipped mesh is not decimated, to preserve the cuff boundaries. Postprocessing can change clearance; it is not re-certified. **Fit release remains false.**
 
-Open abaya with a light inner dress, neck tie and embellished cuffs, using the four owner-provided color references. The back, unseen seam geometry, fabric weight and thickness remain unknown. Do not invent them as product facts.
+Full-outer runs are recorded in `rejected-100-frame-report.json` and `rejected-refined-100-frame-report.json`. They showed excessive movement/interpenetration; do not describe them as production-ready or settled.
 
-## Asset authoring contract
+Rendering uses illustrative crepe/satin/dry-weave presets, not measured MAKA fabric parameters. The default baked mesh casts a ground shadow but does not receive self-shadows, to avoid thin-surface shadow acne; that is a rendering compromise, not cloth validation. Reference photos stay clearly labeled as static.
 
-- Units: meters, transforms applied; use a documented reference mannequin and pose.
-- Export named outer, inner, left sleeve, right sleeve and trims as separate meshes/material slots.
-- Develop front/back and sleeve panels from a reviewed block or actual pattern; use continuous armhole seams and real cuff width. A draft block is not an actual MAKA pattern.
-- Prepare UVs with consistent scale, preserve the neckline opening, hem thickness and shoulder continuity.
-- Author materials from owned/licensed references. Do not turn the full product photo into a stretched texture.
-- In Blender, garments that should drape use `MAKA_CLOTH_*` with non-empty `MAKA_PIN` weights. Bodies use `MAKA_COLLIDER_*`. Fixed/deformation-following trims use `MAKA_TRIM_*`; their attachment must be reviewed by the author. The bake script does not sew arbitrary panels or infer pin groups.
-- Bake externally, inspect frame convergence and intersections, then export a self-contained GLB with textures <=2048px, file <=20MiB, triangles <=150k, materials <=32. Current viewer does not configure Draco/Meshopt/KTX2 decoders.
-- Import into the lab and inspect front/side/back and close-up cuffs. Keep reference photographs clearly labeled as static.
+## Reproduction
 
-## Milestones and acceptance gates
+```sh
+npm install
+npm run build:lab
+npm run test:lab
+npm run start:lab
+```
 
-| Milestone | Acceptance evidence | Current state |
-|---|---|---|
-| Preserve baseline | Full assets restored with checksum, HTML builds, 6 unit tests | Complete |
-| Integration/material viewer | Offline desktop/mobile tests, local GLB import and external resource rejection | Implemented; test report accompanies branch |
-| Authored garment | Reviewed pattern/mesh, UVs, no visible armhole gaps, front/side/back screenshots | Not started with a real product asset |
-| Offline drape | Actual Blender execution report, settled cache, no visible penetration | Script prepared; execution pending |
-| Material realism | Matched roughness/weave scale, cuff close-up, comparison to the same source lighting | Not accepted; presets are illustrative |
-| Size behavior | Reviewed size variants or calibrated retargeting, clearance and length tests | Pending; imported GLB remains static |
-| Mobile budget | Measured device frame time/memory; target >=30fps on named mid-range phone | Not measured on a physical phone; emulator not a performance certification |
+Open `http://localhost:4173/dist/maka-realism-lab.html` or the standalone built HTML. `tools/pilot/README.md` documents regenerating the authored scene and the guided physical bake in Blender. Do not omit `--guided-skirt` when reproducing the shipped asset.
 
-## No silent substitutions
+## Acceptance gates
 
-Do not call this checkpoint photorealistic or size-accurate. Do not substitute a generated product image for an interactive garment, or claim a photograph updates with measurements. Quality gates must be supported by actual assets and tests before merging as a realism release.
+| Gate | State |
+|---|---|
+| Preserve full baseline/assets | Complete, baseline build + 6 unit tests |
+| Connected garment draft / UVs / support groups | Implemented as an authored approximation |
+| Actual offline solver execution | Complete for a guided lower-skirt bake; upper/sleeves fixed |
+| Full outer garment drape | Failed experiments; pending a better pattern/contact/support model |
+| Functional offline viewer/importer | Desktop/mobile browser tests recorded with checkpoint |
+| Body/self-intersection clearance | Not accepted; diagnostic candidates remain |
+| Real product pattern, dimensions, backside | Unknown/not provided; cannot infer accurately from front photos |
+| Real cloth/material calibration | Not accepted |
+| Size variants / calibrated retargeting | Pending; one static reference size only |
+| Physical phone performance | Not certified; emulated viewport tests are not device benchmarks |
+| Public hosted deployment | Not performed |
+
+## Next engineering work
+
+1. Review actual product dimensions and front/side/back construction; replace the geometric block with a reviewed sewing pattern or artist-authored garment.
+2. Fix initial garment/body clearance, seam supports and collision topology before another full-outer solve. Do not simply increase simulation frames.
+3. Validate full-garment settling, body clearance and self-intersections before replacing the guided default.
+4. Tune measured or owned fabric references; review cuffs and armhole close-ups.
+5. Only then develop reviewed size variants/retargeting and physical-device performance evidence.
+
+No photorealistic or size-accuracy acceptance claim is made at this checkpoint.

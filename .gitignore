@@ -8,3 +8,8 @@ qa/
 .env
 .env.*
 .DS_Store
+
+lab/assets/*.glb
+lab/assets/*.blend
+lab/assets/abaya-pilot.report.json
+**/__pycache__/

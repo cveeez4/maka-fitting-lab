@@ -1,0 +1,47 @@
+{
+  "file": "abaya-pilot.glb",
+  "blender": "4.5.3 LTS",
+  "frames": 100,
+  "triangles": 101132,
+  "objects": 2,
+  "simulationSeconds": 396.0,
+  "calibratedFit": false,
+  "runtimeClothSimulation": false,
+  "simulatedMeshes": [
+    "MAKA_CLOTH_outer_connected_sleeves"
+  ],
+  "fixedUnderlayers": [
+    "MAKA_COLLIDER_inner_dress"
+  ],
+  "rmsDisplacementMeters": 0.07075330180515008,
+  "maximumDisplacementMeters": 0.1593151934573932,
+  "rmsMotionLast10FramesMeters": 0.021625769133225056,
+  "nearestBodyPenetrationsOver3mmWithin25mm": 52,
+  "selfIntersectionsValidated": false,
+  "authoringReport": {
+    "outerVertices": 8813,
+    "outerFaces": 8604,
+    "connectedArmholes": 2,
+    "uv": "FabricUV",
+    "pinVertices": 286,
+    "source": "owner photos for visual guidance; geometry is an authored approximation",
+    "fitValidated": false
+  },
+  "reviewRequired": [
+    "settling/convergence",
+    "interpenetration",
+    "texture sizes",
+    "front/side/back match",
+    "fabric parameter calibration"
+  ],
+  "diagnosticSpace": "Raw cloth vertices, before render subdivision, thickness and decimation",
+  "settlingAccepted": false,
+  "fitReleaseAccepted": false,
+  "renderPostprocessing": {
+    "subdivisionLevels": 1,
+    "approximateThicknessMm": 0.8,
+    "decimationRatio": 0.65,
+    "outerBackfaceCulling": true,
+    "viewerSelfShadows": false
+  }
+}

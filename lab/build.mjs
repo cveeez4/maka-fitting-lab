@@ -1,3 +1,4 @@
+import './restore-pilot.mjs';
 import fs from 'node:fs';import * as esbuild from 'esbuild';
 fs.mkdirSync('dist',{recursive:true});
 const fonts=[400,500,600].map(w=>`@font-face{font-family:Plex;font-style:normal;font-weight:${w};font-display:swap;src:url(data:font/ttf;base64,${fs.readFileSync('vendor/fonts/IBM-Plex-Sans-Arabic-'+w+'.ttf').toString('base64')}) format('truetype')}`).join('');

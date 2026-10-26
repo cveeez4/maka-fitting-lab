@@ -1,0 +1,27 @@
+{
+  "sha256": "43407f59425e82d787f4b051ace08d5ebaf2a2df62ff3ff9e610db5be8e02d29",
+  "parts": [
+    "pilot-01.b64",
+    "pilot-02.b64",
+    "pilot-03.b64",
+    "pilot-04.b64",
+    "pilot-05.b64",
+    "pilot-06.b64",
+    "pilot-07.b64",
+    "pilot-08.b64"
+  ],
+  "files": [
+    {
+      "path": "lab/assets/abaya-pilot.glb",
+      "sha256": "a59848faaeecfda009daa76d999919d8eaabe248ee19ed0e25688d8539c3e37c"
+    },
+    {
+      "path": "lab/assets/abaya-authored.blend",
+      "sha256": "a4422acc07f2c717539279da63142c71a64ff18763a061da826724dbbdf4974a"
+    },
+    {
+      "path": "lab/assets/abaya-pilot.report.json",
+      "sha256": "9b9e6804256ea15b423a8faf647e03e2e2d4eb568c55f7cd27f0ae1f551b8f2a"
+    }
+  ]
+}

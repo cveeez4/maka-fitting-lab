@@ -1,3 +1,13 @@
+## Material inspection checkpoint 0.5
+
+This iteration adds distinct procedural normal/roughness maps for crepe, satin and dry weave, a texture-detail comparison switch, softer filtered ground shadows, exposure and light-angle controls, and back/cuff inspection views. It does **not** replace or expand the v0.4 partial cloth simulation. Materials are illustrative, not scanned/calibrated fabric. See `docs/realism/CHECKPOINT-0.5.md` and `verification/v0.5/` for scope and checks.
+
+## Realism pilot branch — static cloth-bake checkpoint 0.4
+
+This branch adds an authored **connected-sleeve** abaya draft and an actual Blender offline **lower-skirt-only** cloth bake, alongside the complete v0.2 baseline. Run `npm run build:lab` and open `dist/maka-realism-lab.html`. Compare the new baked asset with v0.2 using the viewer switch. The upper garment, sleeves and inner dress stay fixed; only the lower skirt is free in the shipped bake. Full-outer experiments failed the stability/clearance checks and are not the default. It is one reference-size draft, **not** a production pattern, calibrated fitting system or live browser simulation. Known interpenetration/convergence diagnostics remain visible in the UI and reports.
+
+Complete authored Blender source and baked GLB are included as checksummed public text transport in `lab/assets/`, restored automatically at build time; nothing is redacted. Development programs such as Blender itself are installed separately. See `tools/pilot/README.md`, `docs/realism/PLAN.md`, and `verification/v0.4/`. Baseline `main` remains the rollback point.
+
 > **Repository distribution:** The owner has explicitly requested that the complete project, including reference assets, be kept in this public repository during development. Public availability is not proof of third-party commercial rights. See asset notices.
 
 ## Reproduce the complete baseline

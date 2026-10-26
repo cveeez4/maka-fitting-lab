@@ -1,0 +1,16 @@
+{
+  "checkpoint": "realism-integration-0.3",
+  "baselinePreserved": true,
+  "baselineUnitTests": 6,
+  "labPolicyUnitTests": 6,
+  "browserFunctionalTests": [
+    "desktop 1440x1050 PASS",
+    "mobile 390x844 PASS"
+  ],
+  "blenderPipeline": "syntax checked only; Blender not installed; no simulation bake executed",
+  "professionalGarmentAsset": "not yet authored or supplied",
+  "photorealisticResultAccepted": false,
+  "fitValidated": false,
+  "deployed": false,
+  "labHTMLSha256": "c4fbef2d8a72a3f717bfbb87e520b95af746c9dfc1250c31052c45b4324026cd"
+}

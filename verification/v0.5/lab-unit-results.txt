@@ -1,0 +1,29 @@
+
+> maka-virtual-fitting@0.2.0 pretest:lab
+> node lab/restore-pilot.mjs
+
+Restored authored Blender source and actual cloth bake, with SHA256 verification
+
+> maka-virtual-fitting@0.2.0 test:lab
+> node --test lab/tests/policy.test.mjs lab/tests/pilot.test.mjs lab/tests/fabric.test.mjs
+
+✔ all procedural maps deterministic, finite and opaque (101.355734ms)
+✔ three weaves and roughness distributions are distinct (7.107268ms)
+✔ invalid procedural preset and dimensions rejected (0.33944ms)
+✔ actual pilot GLB is embedded, finite-budget and contains no external resources (1.062191ms)
+✔ bake report records actual cloth movement and single-size limitations (0.264151ms)
+✔ packed baked asset matches its recorded SHA256 (3.877206ms)
+✔ embedded GLB 2.0 accepted and triangle count reported (1.229402ms)
+✔ malformed binary is rejected (1.143871ms)
+✔ external buffers and images blocked before loader parsing (0.447646ms)
+✔ compressed assets requiring unconfigured decoders rejected (0.250159ms)
+✔ excessive triangle and material counts rejected (0.365111ms)
+✔ finite vertices and texture dimension inspected after decoding (0.351891ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 280.395129

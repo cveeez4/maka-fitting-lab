@@ -1,3 +1,5 @@
+> Distribution update: the repository owner explicitly requested publication of the complete development project, including reference assets, in this public repository. The pack is not encryption. This does not grant a general reuse license to the photographs or resolve third-party commercial provenance. Earlier private-review wording below describes the original delivery, not the current repository visibility.
+
 # الخصوصية والتراخيص
 
 ## البيانات في v0.2

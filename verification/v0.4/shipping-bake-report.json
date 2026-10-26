@@ -1,0 +1,55 @@
+{
+  "file": "abaya-pilot.glb",
+  "blender": "4.5.3 LTS",
+  "frames": 100,
+  "triangles": 149436,
+  "objects": 2,
+  "simulationSeconds": 27.4,
+  "calibratedFit": false,
+  "runtimeClothSimulation": false,
+  "simulatedMeshes": [
+    "MAKA_CLOTH_outer_connected_sleeves"
+  ],
+  "simulationScope": "lower skirt only; upper body and sleeves anchored",
+  "fixedUnderlayers": [
+    "MAKA_COLLIDER_inner_dress"
+  ],
+  "rmsDisplacementMeters": 0.015994407595548855,
+  "maximumDisplacementMeters": 0.07842419535077795,
+  "rmsMotionLast10FramesMeters": 0.00024767846261099534,
+  "nearestBodyPenetrationsOver3mmWithin25mm": 214,
+  "selfIntersectionsValidated": false,
+  "authoringReport": {
+    "outerVertices": 8813,
+    "outerFaces": 8604,
+    "connectedArmholes": 2,
+    "uv": "FabricUV",
+    "pinVertices": 5431,
+    "source": "owner photos for visual guidance; geometry is an authored approximation",
+    "fitValidated": false,
+    "simulationScope": "lower skirt only; upper body and sleeves anchored",
+    "supportConstraints": "neck/shoulder anchors, weak upper-lapel and wrist-position guides; guided drape, not unconstrained free cloth"
+  },
+  "reviewRequired": [
+    "settling/convergence",
+    "interpenetration",
+    "texture sizes",
+    "front/side/back match",
+    "fabric parameter calibration"
+  ],
+  "diagnosticSpace": "Raw cloth vertices, before render subdivision, thickness and decimation",
+  "settlingAccepted": true,
+  "fitReleaseAccepted": false,
+  "renderPostprocessing": {
+    "subdivisionLevels": 1,
+    "approximateThicknessMm": 0.8,
+    "decimationRatio": 1.0,
+    "outerBackfaceCulling": true,
+    "viewerSelfShadows": false,
+    "order": [
+      "subdivision",
+      "solidify",
+      "backface_culling"
+    ]
+  }
+}

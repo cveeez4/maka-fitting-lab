@@ -1,0 +1,37 @@
+{
+  "file": "abaya-simulated.glb",
+  "blender": "4.5.3 LTS",
+  "frames": 60,
+  "triangles": 149904,
+  "objects": 2,
+  "simulationSeconds": 76.71,
+  "calibratedFit": false,
+  "runtimeClothSimulation": false,
+  "simulatedMeshes": [
+    "MAKA_CLOTH_outer_connected_sleeves"
+  ],
+  "fixedUnderlayers": [
+    "MAKA_COLLIDER_inner_dress"
+  ],
+  "rmsDisplacementMeters": 0.0383649614695707,
+  "maximumDisplacementMeters": 0.10626555059038027,
+  "rmsMotionLast10FramesMeters": 0.009862686171279899,
+  "nearestBodyPenetrationsOver3mmWithin25mm": 89,
+  "selfIntersectionsValidated": false,
+  "authoringReport": {
+    "outerVertices": 8813,
+    "outerFaces": 8604,
+    "connectedArmholes": 2,
+    "uv": "FabricUV",
+    "pinVertices": 286,
+    "source": "owner photos for visual guidance; geometry is an authored approximation",
+    "fitValidated": false
+  },
+  "reviewRequired": [
+    "settling/convergence",
+    "interpenetration",
+    "texture sizes",
+    "front/side/back match",
+    "fabric parameter calibration"
+  ]
+}

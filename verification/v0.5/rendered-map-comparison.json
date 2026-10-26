@@ -1,0 +1,38 @@
+{
+  "desktop": {
+    "canvasSize": [
+      918,
+      651
+    ],
+    "meanAbsoluteRGBDifference0to255": [
+      0.5749224420951177,
+      2.1421259065155334,
+      1.2525693670538705
+    ],
+    "changedPixelBoundingBox": [
+      0,
+      0,
+      518,
+      650
+    ],
+    "note": "Functional rendered difference, not a photorealism score"
+  },
+  "mobile": {
+    "canvasSize": [
+      356,
+      491
+    ],
+    "meanAbsoluteRGBDifference0to255": [
+      0.7019439804114511,
+      2.298891278976636,
+      1.350528616215474
+    ],
+    "changedPixelBoundingBox": [
+      0,
+      0,
+      350,
+      491
+    ],
+    "note": "Functional rendered difference, not a photorealism score"
+  }
+}

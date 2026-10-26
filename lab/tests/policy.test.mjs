@@ -1,0 +1,7 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {inspectGLB,inspectLoaded,limits} from '../src/asset-policy.js';import {glbFixture} from './fixture.mjs';
+test('embedded GLB 2.0 accepted and triangle count reported',()=>assert.equal(inspectGLB(glbFixture()).triangles,1));
+test('malformed binary is rejected',()=>{assert.throws(()=>inspectGLB(new ArrayBuffer(2)));const a=glbFixture();new DataView(a).setUint32(0,1);assert.throws(()=>inspectGLB(a));});
+test('external buffers and images blocked before loader parsing',()=>{for(const patch of [{buffers:[{uri:'https://example.com/private.bin'}]},{images:[{uri:'https://example.com/pixel.png'}]},{images:[{uri:'file:///etc/passwd'}]}])assert.throws(()=>inspectGLB(glbFixture(patch)));});
+test('compressed assets requiring unconfigured decoders rejected',()=>assert.throws(()=>inspectGLB(glbFixture({extensionsUsed:['KHR_draco_mesh_compression']}))));
+test('excessive triangle and material counts rejected',()=>{assert.throws(()=>inspectGLB(glbFixture({accessors:[{count:3},{count:limits.triangles*3+3}]})));assert.throws(()=>inspectGLB(glbFixture({materials:Array(33).fill({})})))});
+test('finite vertices and texture dimension inspected after decoding',()=>{const root=o=>({traverse:fn=>fn(o)});const o={isMesh:true,geometry:{attributes:{position:{array:new Float32Array([0,0,NaN]),count:1}}},material:{}};assert.throws(()=>inspectLoaded(root(o)));o.geometry.attributes.position.array[2]=0;o.material.map={isTexture:true,image:{width:4096,height:64}};assert.throws(()=>inspectLoaded(root(o)));});

@@ -1,0 +1,11 @@
+{
+  "status": "OWNER INPUT REQUIRED — do not infer missing dimensions from a front photo",
+  "units": "cm",
+  "product": "open abaya with contrasting inner layer",
+  "measurements": {"garment_length_shoulder_to_hem": null,"shoulder_width": null,"chest_flat_width": null,"hip_flat_width": null,"hem_flat_width": null,"sleeve_length": null,"upper_arm_circumference": null,"cuff_circumference": null,"neck_opening_width": null,"front_facing_width": null,"inner_dress_length": null},
+  "references": {"front": null,"side": null,"back": null,"neck_closure_closeup": null,"cuff_closeup": null,"seam_and_hem_closeup": null},
+  "fabric": {"composition": null,"weight_gsm": null,"measured_stretch_warp_weft": null,"bending_or_drape_sample": null},
+  "rights": {"photos_owned_or_authorized": null,"pattern_owned_or_authorized": null},
+  "approved_size_labels_and_dimensions": [],
+  "do_not_claim": ["calibrated customer fit", "authentic hidden construction", "physical device benchmark without testing"]
+}

@@ -1,3 +1,9 @@
+## Current checkpoint 0.6 — hardening, construction and efficiency
+
+A conservative pre-decode static GLB policy, source-bound simulation evidence, resource ownership and demand rendering now accompany a lighter 87,848-triangle construction draft with approximate neck/cuff/stitch details. The guided skirt bake has been rerun with consecutive free-vertex motion metrics and final-surface diagnostics. A new full-outer solve was actually executed and **rejected**; it is not the default. One reference size only; no calibrated fit or physical-phone acceptance. See `docs/realism/CHECKPOINT-0.6.md`, `verification/v0.6/`, and the missing-input `GARMENT-SPEC-TEMPLATE.json`.
+
+The CI workflow is supplied; remote run status is separate from local passing tests. Complete current source/assets and previous baseline remain available. Main remains the rollback baseline.
+
 ## Material inspection checkpoint 0.5
 
 This iteration adds distinct procedural normal/roughness maps for crepe, satin and dry weave, a texture-detail comparison switch, softer filtered ground shadows, exposure and light-angle controls, and back/cuff inspection views. It does **not** replace or expand the v0.4 partial cloth simulation. Materials are illustrative, not scanned/calibrated fabric. See `docs/realism/CHECKPOINT-0.5.md` and `verification/v0.5/` for scope and checks.

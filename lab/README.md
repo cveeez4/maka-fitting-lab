@@ -1,4 +1,4 @@
-# MAKA Realism Lab — material inspection 0.5
+# MAKA Realism Lab — checkpoint 0.6
 
 Run from the repository root:
 
@@ -18,3 +18,7 @@ An imported GLB uses its own embedded materials; measurement and fabric override
 If Chromium is not installed, run `npm exec playwright install chromium` before the browser tests, or set `CHROMIUM_PATH` to an installed Chromium executable. These tests are functional/offline tests, not a physical phone performance benchmark.
 
 Material iteration 0.5 uses separate procedural normal/roughness maps, with mipmapped filtering, a detail toggle, exposure/light-angle/reset controls, and front/back/side/bodice/cuff cameras. It is a rendering update; the guided lower-skirt bake and all fitting limitations remain unchanged. See `docs/realism/CHECKPOINT-0.5.md`.
+
+## Current importer and runtime
+
+The importer deliberately supports a bounded static GLB subset, PNG/JPEG embedded images only; instancing, animation, skins, morph targets, sparse/unbacked accessors and unsupported extensions are rejected. A 20 MiB file limit is combined with pre-decode geometry/image memory caps. Imported models never inherit the bundled physics report. Rendering stops when idle/offscreen; balanced/eco/detail control pixel ratio. There are no calibrated size controls or real-device performance claims. See `docs/realism/CHECKPOINT-0.6.md` for exact limits and open gates.

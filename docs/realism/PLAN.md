@@ -1,3 +1,5 @@
+> Current implementation and remaining gates: `CHECKPOINT-0.6.md`. The 0.4/0.5 descriptions below are historical and their old endpoint-motion statistic is not a convergence certificate.
+
 > Latest rendering iteration: see `CHECKPOINT-0.5.md`. The physical simulation described below is unchanged.
 
 # Checkpoint 0.4 — connected draft + guided lower-skirt simulation

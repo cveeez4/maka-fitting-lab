@@ -1,0 +1,23 @@
+
+> maka-virtual-fitting@0.2.0 pretest
+> node restore-assets.mjs
+
+Restored 41 original asset files (checksummed).
+
+> maka-virtual-fitting@0.2.0 test
+> node --test tests/geometry.test.mjs
+
+✔ input boundaries reject blank, non-finite and out-of-range values (0.957111ms)
+✔ ellipse perimeter matches the requested illustrative circumference (0.199642ms)
+✔ directly mapped measurements reach the expected coefficients (0.28955ms)
+✔ upstream female mesh reconstructs finite vertices and valid indices (9.367991ms)
+✔ each requested body input modifies the actual vertex buffer (21.284448ms)
+✔ supported extreme inputs produce finite body and garment data (8.815354ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 128.995157

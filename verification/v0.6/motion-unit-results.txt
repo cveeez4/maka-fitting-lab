@@ -1,0 +1,9 @@
+
+> maka-virtual-fitting@0.2.0 test:motion
+> python3 -m unittest discover -s tools/blender -p test_motion_metrics.py
+
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.000s
+
+OK

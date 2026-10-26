@@ -1,0 +1,44 @@
+
+> maka-virtual-fitting@0.2.0 pretest:lab
+> node lab/restore-pilot.mjs
+
+Restored authored Blender source and actual cloth bake, with SHA256 verification
+
+> maka-virtual-fitting@0.2.0 test:lab
+> node --test lab/tests/*.test.mjs
+
+✔ all procedural maps deterministic, finite and opaque (133.922452ms)
+✔ three weaves and roughness distributions are distinct (14.018917ms)
+✔ invalid procedural preset and dimensions rejected (0.35551ms)
+✔ huge, zero-initialized and out-of-range accessors rejected before loader (3.024962ms)
+✔ GPU instancing rejected even if extensionsUsed omitted (0.495482ms)
+✔ all reachable mesh instances count, not just unique definitions (0.881502ms)
+✔ cycles, duplicate scene roots, deep and excessively large graphs rejected (4.123193ms)
+✔ nonfinite source coordinates and invalid index values rejected before decode (0.414702ms)
+✔ 4K embedded PNG rejected before image decode (0.719963ms)
+✔ aggregate image memory is capped, not just dimensions (0.480697ms)
+✔ unsupported formats, animation, skin and morph targets fail closed (0.515967ms)
+✔ truncated and duplicate GLB chunks fail closed (0.582684ms)
+✔ the shipped construction asset passes the stricter preflight (15.872061ms)
+✔ actual pilot GLB is embedded, finite-budget and contains no external resources (27.508926ms)
+✔ bake report records actual cloth movement and single-size limitations (0.342476ms)
+✔ packed baked asset matches its recorded SHA256 (3.151387ms)
+✔ embedded GLB 2.0 accepted and triangle count reported (6.93676ms)
+✔ malformed binary is rejected (0.389539ms)
+✔ external buffers and images blocked before loader parsing (0.562095ms)
+✔ compressed assets requiring unconfigured decoders rejected (0.277073ms)
+✔ excessive triangle and material counts rejected (0.523256ms)
+✔ finite vertices and texture dimension inspected after decoding (0.504487ms)
+✔ resources released once and late asynchronous resolutions released immediately (0.852817ms)
+✔ real imported root owns geometry and materials even before validation/attachment (6.352646ms)
+✔ demand rendering settles and repeated invalidations coalesce (1.013353ms)
+✔ long stalls remain visible in metrics (0.236466ms)
+✔ pause clears pending work and visibility resumes safely (0.206661ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 27
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 644.014056

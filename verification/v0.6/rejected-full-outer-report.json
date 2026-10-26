@@ -1,0 +1,193 @@
+{
+  "file": "full-experiment.glb",
+  "blender": "4.5.3 LTS",
+  "frames": 100,
+  "triangles": 87848,
+  "objects": 10,
+  "simulationSeconds": 238.36,
+  "calibratedFit": false,
+  "runtimeClothSimulation": false,
+  "simulatedMeshes": [
+    "MAKA_CLOTH_outer_connected_sleeves"
+  ],
+  "simulationScope": "full outer experiment",
+  "fixedUnderlayers": [
+    "MAKA_COLLIDER_inner_dress",
+    "MAKA_TRIM_lapel_stitch_left",
+    "MAKA_TRIM_lapel_stitch_right",
+    "MAKA_TRIM_cuff_edge_0",
+    "MAKA_TRIM_cuff_edge_1",
+    "MAKA_TRIM_neck_loop_-1",
+    "MAKA_TRIM_neck_tail_-1",
+    "MAKA_TRIM_neck_loop_1",
+    "MAKA_TRIM_neck_tail_1"
+  ],
+  "rmsDisplacementMeters": 0.15204975261133946,
+  "maximumDisplacementMeters": 0.25769187713606856,
+  "endpointDeltaRmsOver10FramesMeters": 0.025829799006990617,
+  "endpointDeltaIsConvergenceCertificate": false,
+  "convergence": {
+    "evaluatedOn": "free vertices only, excluding weight >= 0.999",
+    "freeVertexCount": 4919,
+    "consecutiveStepSamples": [
+      {
+        "frame": 81,
+        "freeVertexRmsMeters": 0.00671608512303985,
+        "freeVertexP95Meters": 0.011285169936671727,
+        "freeVertexMaxMeters": 0.02772922154477625
+      },
+      {
+        "frame": 82,
+        "freeVertexRmsMeters": 0.006394803874986205,
+        "freeVertexP95Meters": 0.011528632275592266,
+        "freeVertexMaxMeters": 0.02705665162809218
+      },
+      {
+        "frame": 83,
+        "freeVertexRmsMeters": 0.006225404823266181,
+        "freeVertexP95Meters": 0.011310475096475942,
+        "freeVertexMaxMeters": 0.03573283836737308
+      },
+      {
+        "frame": 84,
+        "freeVertexRmsMeters": 0.0059121747869730614,
+        "freeVertexP95Meters": 0.011023432556833754,
+        "freeVertexMaxMeters": 0.022478284651958405
+      },
+      {
+        "frame": 85,
+        "freeVertexRmsMeters": 0.006078394047015765,
+        "freeVertexP95Meters": 0.011137062126137886,
+        "freeVertexMaxMeters": 0.02747845597279471
+      },
+      {
+        "frame": 86,
+        "freeVertexRmsMeters": 0.006072050127427203,
+        "freeVertexP95Meters": 0.011364123761755555,
+        "freeVertexMaxMeters": 0.026677165197308696
+      },
+      {
+        "frame": 87,
+        "freeVertexRmsMeters": 0.006036108219861217,
+        "freeVertexP95Meters": 0.011599834502285716,
+        "freeVertexMaxMeters": 0.024258451522575802
+      },
+      {
+        "frame": 88,
+        "freeVertexRmsMeters": 0.005611925212099006,
+        "freeVertexP95Meters": 0.010202919416486631,
+        "freeVertexMaxMeters": 0.02545944714881419
+      },
+      {
+        "frame": 89,
+        "freeVertexRmsMeters": 0.005630146725166258,
+        "freeVertexP95Meters": 0.010200059634235679,
+        "freeVertexMaxMeters": 0.022081817755843006
+      },
+      {
+        "frame": 90,
+        "freeVertexRmsMeters": 0.005401269149690757,
+        "freeVertexP95Meters": 0.00981513572979562,
+        "freeVertexMaxMeters": 0.028210242699014662
+      },
+      {
+        "frame": 91,
+        "freeVertexRmsMeters": 0.006119379275461894,
+        "freeVertexP95Meters": 0.011486708277435568,
+        "freeVertexMaxMeters": 0.03196444231961161
+      },
+      {
+        "frame": 92,
+        "freeVertexRmsMeters": 0.005728155121615759,
+        "freeVertexP95Meters": 0.011066714162192653,
+        "freeVertexMaxMeters": 0.022489333445392005
+      },
+      {
+        "frame": 93,
+        "freeVertexRmsMeters": 0.0056249331554682,
+        "freeVertexP95Meters": 0.010311194427270458,
+        "freeVertexMaxMeters": 0.03250077489266371
+      },
+      {
+        "frame": 94,
+        "freeVertexRmsMeters": 0.005821325589735404,
+        "freeVertexP95Meters": 0.010440618867945008,
+        "freeVertexMaxMeters": 0.031075309603139006
+      },
+      {
+        "frame": 95,
+        "freeVertexRmsMeters": 0.005553185870224679,
+        "freeVertexP95Meters": 0.010232406642982922,
+        "freeVertexMaxMeters": 0.02790315312205191
+      },
+      {
+        "frame": 96,
+        "freeVertexRmsMeters": 0.005945636608006872,
+        "freeVertexP95Meters": 0.010979957777698484,
+        "freeVertexMaxMeters": 0.025154465389603302
+      },
+      {
+        "frame": 97,
+        "freeVertexRmsMeters": 0.005754534651367498,
+        "freeVertexP95Meters": 0.010435156662161877,
+        "freeVertexMaxMeters": 0.024708011563591807
+      },
+      {
+        "frame": 98,
+        "freeVertexRmsMeters": 0.005853488504085923,
+        "freeVertexP95Meters": 0.011117244412418117,
+        "freeVertexMaxMeters": 0.036843448690999606
+      },
+      {
+        "frame": 99,
+        "freeVertexRmsMeters": 0.005763425049789233,
+        "freeVertexP95Meters": 0.01127985963796867,
+        "freeVertexMaxMeters": 0.02524759799681665
+      },
+      {
+        "frame": 100,
+        "freeVertexRmsMeters": 0.005533596645843578,
+        "freeVertexP95Meters": 0.010846594279849056,
+        "freeVertexMaxMeters": 0.03125563347108616
+      }
+    ],
+    "windowFrames": 20,
+    "limitedMotionGatePassed": false,
+    "isFitOrClearanceCertificate": false
+  },
+  "postprocessedClearance": {
+    "MAKA_COLLIDER_body": {
+      "testedVertices": 40174,
+      "nearestSurfacePenetrationCandidatesOver3mmWithin25mm": 571,
+      "method": "nearest-point signed-normal heuristic on postprocessed mesh; not a triangle-intersection certificate"
+    },
+    "MAKA_COLLIDER_inner_dress": {
+      "testedVertices": 40174,
+      "nearestSurfacePenetrationCandidatesOver3mmWithin25mm": 658,
+      "method": "nearest-point signed-normal heuristic on postprocessed mesh; not a triangle-intersection certificate"
+    }
+  },
+  "nearestBodyPenetrationsOver3mmWithin25mm": 68,
+  "selfIntersectionsValidated": false,
+  "authoringReport": {
+    "constructionDetails": "Approximate neck tie, upper-lapel stitching and cuff-edge rolls; fixed visual trims, not sewn constraints or a verified product pattern.",
+    "outerVertices": 5099,
+    "outerFaces": 4944,
+    "connectedArmholes": 2,
+    "uv": "FabricUV",
+    "pinVertices": 318,
+    "source": "owner photos for visual guidance; geometry is an authored approximation",
+    "fitValidated": false,
+    "simulationScope": "full outer experiment",
+    "supportConstraints": "neck/shoulder anchors, weak upper-lapel and wrist-position guides; guided drape, not unconstrained free cloth"
+  },
+  "reviewRequired": [
+    "settling/convergence",
+    "interpenetration",
+    "texture sizes",
+    "front/side/back match",
+    "fabric parameter calibration"
+  ],
+  "promotionAccepted": false,
+  "decision": "Rejected: motion gate failed; final body/inner clearance and self-intersections not accepted."
+}

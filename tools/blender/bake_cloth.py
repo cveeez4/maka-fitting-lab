@@ -15,6 +15,8 @@ import math
 import bpy
 from mathutils.bvhtree import BVHTree
 from mathutils import Vector
+sys.path.insert(0,os.path.dirname(__file__))
+from motion_metrics import free_step_distances,summarize_step,limited_motion_gate
 
 
 def args():
@@ -81,7 +83,9 @@ def run():
         mod.point_cache.frame_start = 1
         mod.point_cache.frame_end = options.frames
     rest = {obj.name: [v.co.copy() for v in obj.data.vertices] for obj in cloth}
-    samples = {}
+    samples = {}; step_metrics=[]; last_positions=None
+    free_ids={obj.name:[v.index for v in obj.data.vertices if not any(g.group==obj.vertex_groups['MAKA_PIN'].index and g.weight>=.999 for g in v.groups)] for obj in cloth}
+    if any(not ids for ids in free_ids.values()):raise RuntimeError('No free vertices for convergence analysis')
     start = time.perf_counter()
     for frame in range(1, options.frames + 1):
         scene.frame_set(frame)
@@ -91,14 +95,15 @@ def run():
             evaluated = obj.evaluated_get(graph)
             evaluated.to_mesh()
             evaluated.to_mesh_clear()
-        if frame in {1, options.frames//2, max(1,options.frames-10), options.frames}:
-            graph = bpy.context.evaluated_depsgraph_get()
-            samples[frame] = {}
+        if frame>=max(1,options.frames-20) or frame in {1,options.frames//2}:
+            positions={}
             for obj in cloth:
-                ev = obj.evaluated_get(graph)
-                mesh = ev.to_mesh()
-                samples[frame][obj.name] = [v.co.copy() for v in mesh.vertices]
-                ev.to_mesh_clear()
+                ev=obj.evaluated_get(graph);mesh=ev.to_mesh();positions[obj.name]=[v.co.copy() for v in mesh.vertices];ev.to_mesh_clear()
+            samples[frame]=positions
+            if last_positions is not None and frame>options.frames-20:
+                steps=[d for obj in cloth for d in free_step_distances(last_positions[obj.name],positions[obj.name],free_ids[obj.name])]
+                step_metrics.append(summarize_step(steps,frame))
+            last_positions=positions
         if frame % 10 == 0:
             print('MAKA_FRAME', frame, 'seconds', round(time.perf_counter()-start,1), flush=True)
     graph = bpy.context.evaluated_depsgraph_get()
@@ -138,6 +143,16 @@ def run():
         for polygon in target.data.polygons:
             polygon.use_smooth = True
         baked.append(target)
+    final_clearance={}
+    for collider in colliders:
+        if collider.name not in ['MAKA_COLLIDER_body','MAKA_COLLIDER_inner_dress']:continue
+        bvh=BVHTree.FromObject(collider,graph);count=0;tested=0
+        for ob in baked:
+            if not ob.name.startswith('abaya_'):continue
+            for vertex in ob.data.vertices:
+                point=ob.matrix_world@vertex.co;near,normal,_,distance=bvh.find_nearest(point);tested+=1
+                if near is not None and distance<.025 and (point-near).dot(normal)<-.003:count+=1
+        final_clearance[collider.name]={'testedVertices':tested,'nearestSurfacePenetrationCandidatesOver3mmWithin25mm':count,'method':'nearest-point signed-normal heuristic on postprocessed mesh; not a triangle-intersection certificate'}
     triangles = sum(sum(max(0, len(p.vertices) - 2) for p in obj.data.polygons) for obj in baked)
     if triangles > 150000:
         raise RuntimeError(f'Asset exceeds lab triangle budget: {triangles}. Retopologize/decimate and review before export.')
@@ -155,10 +170,14 @@ def run():
               'calibratedFit': False, 'runtimeClothSimulation': False,
               'simulatedMeshes': [o.name for o in cloth],
               'simulationScope': 'lower skirt only; upper body and sleeves anchored' if guided_skirt else 'full outer experiment',
-              'fixedUnderlayers': [o.name for o in trims if o.get('MAKA_export_fixed',False)],
+              'fixedUnderlayers': [o.name for o in trims if o.name=='MAKA_COLLIDER_inner_dress'],
+              'fixedVisualParts': [o.name for o in trims if o.name.startswith('MAKA_TRIM_')],
               'rmsDisplacementMeters': math.sqrt(sum(d*d for d in deltas)/len(deltas)),
               'maximumDisplacementMeters': max(deltas),
-              'rmsMotionLast10FramesMeters': math.sqrt(sum(d*d for d in motion)/len(motion)),
+              'endpointDeltaRmsOver10FramesMeters': math.sqrt(sum(d*d for d in motion)/len(motion)),
+              'endpointDeltaIsConvergenceCertificate':False,
+              'convergence':{'evaluatedOn':'free vertices only, excluding weight >= 0.999','freeVertexCount':sum(map(len,free_ids.values())),'consecutiveStepSamples':step_metrics,'windowFrames':20,'limitedMotionGatePassed':limited_motion_gate(step_metrics),'isFitOrClearanceCertificate':False},
+              'postprocessedClearance':final_clearance,
               'nearestBodyPenetrationsOver3mmWithin25mm': penetration_count,
               'selfIntersectionsValidated': False,
               'authoringReport': json.loads(scene.get('MAKA_authoring_report','{}')),

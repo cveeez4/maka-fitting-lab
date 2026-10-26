@@ -13,3 +13,5 @@ lab/assets/*.glb
 lab/assets/*.blend
 lab/assets/abaya-pilot.report.json
 **/__pycache__/
+
+lab/assets/*.report.json

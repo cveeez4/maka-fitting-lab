@@ -1,0 +1,74 @@
+[
+  {
+    "viewport": "desktop",
+    "size": [
+      1440,
+      1050
+    ],
+    "result": "PASS",
+    "renderMetrics": {
+      "frames": 77,
+      "samples": 55,
+      "medianMs": 583.3000000000029,
+      "p95Ms": 1716.6000000000058,
+      "worstMs": 4599.9,
+      "includesLongStalls": true,
+      "firstFrameMs": 4480.5999999996275,
+      "physicalDeviceBenchmark": false
+    },
+    "physicalPhoneBenchmark": false,
+    "contextRecovery": "PASS: real WebGL lose/restore extension, environment rebuilt",
+    "checks": [
+      "strict budget default asset <100K triangles",
+      "20 consecutive free-vertex motion samples; fit not accepted",
+      "nonempty distinct fabric maps",
+      "stable control screenshots and changed texture comparison",
+      "back/side/cuff visual captures",
+      "light angle/exposure/reset",
+      "quality resolution modes",
+      "source-bound provenance on legacy/import/restore",
+      "three owned imports",
+      "external URL, instancing and huge accessor rejected preserving model",
+      "demand rendering idle stop, rotation restart and offscreen pause",
+      "reference modal/Escape",
+      "PNG export",
+      "no network/storage/errors/overflow"
+    ]
+  },
+  {
+    "viewport": "mobile",
+    "size": [
+      390,
+      844
+    ],
+    "result": "PASS",
+    "renderMetrics": {
+      "frames": 65,
+      "samples": 51,
+      "medianMs": 266.6999999999971,
+      "p95Ms": 933.2999999999993,
+      "worstMs": 4316.5,
+      "includesLongStalls": true,
+      "firstFrameMs": 4137.600000000559,
+      "physicalDeviceBenchmark": false
+    },
+    "physicalPhoneBenchmark": false,
+    "contextRecovery": "not attempted on this viewport",
+    "checks": [
+      "strict budget default asset <100K triangles",
+      "20 consecutive free-vertex motion samples; fit not accepted",
+      "nonempty distinct fabric maps",
+      "stable control screenshots and changed texture comparison",
+      "back/side/cuff visual captures",
+      "light angle/exposure/reset",
+      "quality resolution modes",
+      "source-bound provenance on legacy/import/restore",
+      "three owned imports",
+      "external URL, instancing and huge accessor rejected preserving model",
+      "demand rendering idle stop, rotation restart and offscreen pause",
+      "reference modal/Escape",
+      "PNG export",
+      "no network/storage/errors/overflow"
+    ]
+  }
+]

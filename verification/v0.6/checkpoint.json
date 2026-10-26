@@ -1,0 +1,38 @@
+{
+  "checkpoint": "0.6-trust-construction-efficiency",
+  "tracks": {
+    "importAndEvidenceHardening": "implemented and regression-tested",
+    "garmentConstruction": "lighter connected draft with fixed visual details; real pattern still requires owner input",
+    "runtimeEfficiency": "demand/visibility rendering, quality modes and context recovery tested; no physical-phone certification"
+  },
+  "triangles": 87848,
+  "previousTriangles": 149436,
+  "triangleReductionPercent": 41.21,
+  "loadedMeshes": 5,
+  "frames": 100,
+  "consecutiveFreeVertexSteps": 20,
+  "freeVertices": 1885,
+  "motionOnlyGatePassed": true,
+  "fullSettlingAccepted": false,
+  "fitReleaseAccepted": false,
+  "selfIntersectionsValidated": false,
+  "fullOuterExperimentExecuted": true,
+  "fullOuterExperimentAccepted": false,
+  "tests": {
+    "baseline": 6,
+    "lab": 27,
+    "pureMotion": 4,
+    "desktopBrowser": "PASS",
+    "mobileViewportBrowser": "PASS",
+    "desktopContextLossRestore": "PASS",
+    "idleAndOffscreenPause": "PASS",
+    "physicalPhoneBenchmark": false
+  },
+  "ciWorkflow": "included; remote execution not certified by local test results",
+  "hostedDeployment": false,
+  "calibratedSizeVariants": false,
+  "missingInputTemplate": "docs/realism/GARMENT-SPEC-TEMPLATE.json",
+  "htmlBytes": 7212522,
+  "htmlSha256": "9052cf44b55285b4e4119fb6148174c1478b4158bcd880bc32c2a5ebe359a5a0",
+  "assetManifestSha256": "4d7b1100c9ffbb167fa1a6723306698d1c12438dc50ca52c573eac715f0e4f56"
+}

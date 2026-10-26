@@ -1,3 +1,5 @@
+> Remediation follow-up: see `CHECKPOINT-0.6.md` and new regression tests. This review and its probes describe the explicitly named 0.5 checkpoint; original acceptance probes are not acceptance tests for the hardened importer.
+
 # Adversarial review — MAKA Realism Lab 0.5
 
 **Reviewed code checkpoint:** `0ce92271af5cbee9ccc1d8cfdc5b109bc7fe6c10`.

@@ -1,27 +1,29 @@
 {
-  "sha256": "43407f59425e82d787f4b051ace08d5ebaf2a2df62ff3ff9e610db5be8e02d29",
+  "sha256": "d1e77308db61fdc6c3bedc3f9c6a85aaf78b016f8a0f748e7714eb1c8d927156",
   "parts": [
-    "pilot-01.b64",
-    "pilot-02.b64",
-    "pilot-03.b64",
-    "pilot-04.b64",
-    "pilot-05.b64",
-    "pilot-06.b64",
-    "pilot-07.b64",
-    "pilot-08.b64"
+    "pilot06-01.b64",
+    "pilot06-02.b64",
+    "pilot06-03.b64",
+    "pilot06-04.b64",
+    "pilot06-05.b64",
+    "pilot06-06.b64"
   ],
   "files": [
     {
       "path": "lab/assets/abaya-pilot.glb",
-      "sha256": "a59848faaeecfda009daa76d999919d8eaabe248ee19ed0e25688d8539c3e37c"
+      "sha256": "eb4311ae3a006bce952f554884bc9d874b9e8eded9faa47d06a17a53162d7bcd"
     },
     {
       "path": "lab/assets/abaya-authored.blend",
-      "sha256": "a4422acc07f2c717539279da63142c71a64ff18763a061da826724dbbdf4974a"
+      "sha256": "eaf21ed3f844039d64a19ac532e006793cd20cfd3cea5d3cc986951d60d3e251"
     },
     {
       "path": "lab/assets/abaya-pilot.report.json",
-      "sha256": "9b9e6804256ea15b423a8faf647e03e2e2d4eb568c55f7cd27f0ae1f551b8f2a"
+      "sha256": "421b5da06571979b7569125290175d55b2f4469e3d6b748a63a8b6b6f42a0e7f"
+    },
+    {
+      "path": "lab/assets/abaya-full-rejected.report.json",
+      "sha256": "5b214bf71de4670f68a23e8ce27c929e6c0041d5f8910f31f38d692f52e09327"
     }
   ]
 }

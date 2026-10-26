@@ -1,2 +1,64 @@
 // Self-authored tiny test mesh; not a product asset.
-export function glbFixture(patch={}){const positions=new Float32Array([-.25,0,0,.25,0,0,0,1.4,0]);const indices=new Uint16Array([0,1,2]);const bin=Buffer.alloc(44);Buffer.from(positions.buffer).copy(bin);Buffer.from(indices.buffer).copy(bin,36);const doc={asset:{version:'2.0'},scene:0,scenes:[{nodes:[0]}],nodes:[{mesh:0}],meshes:[{primitives:[{attributes:{POSITION:0},indices:1,material:0}]}],materials:[{pbrMetallicRoughness:{baseColorFactor:[.5,.05,.2,1],metallicFactor:0,roughnessFactor:.8},doubleSided:true}],buffers:[{byteLength:44}],bufferViews:[{buffer:0,byteOffset:0,byteLength:36,target:34962},{buffer:0,byteOffset:36,byteLength:6,target:34963}],accessors:[{bufferView:0,componentType:5126,count:3,type:'VEC3',min:[-.25,0,0],max:[.25,1.4,0]},{bufferView:1,componentType:5123,count:3,type:'SCALAR'}],...patch};let json=Buffer.from(JSON.stringify(doc));const pad=(4-json.length%4)%4;json=Buffer.concat([json,Buffer.alloc(pad,32)]);const result=Buffer.alloc(12+8+json.length+8+bin.length);result.writeUInt32LE(0x46546c67,0);result.writeUInt32LE(2,4);result.writeUInt32LE(result.length,8);result.writeUInt32LE(json.length,12);result.writeUInt32LE(0x4e4f534a,16);json.copy(result,20);const o=20+json.length;result.writeUInt32LE(bin.length,o);result.writeUInt32LE(0x004e4942,o+4);bin.copy(result,o+8);return result.buffer.slice(result.byteOffset,result.byteOffset+result.byteLength);}
+export function glbFixture(patch = {}) {
+  const positions = new Float32Array([-0.25, 0, 0, 0.25, 0, 0, 0, 1.4, 0]);
+  const indices = new Uint16Array([0, 1, 2]);
+  const bin = Buffer.alloc(44);
+  Buffer.from(positions.buffer).copy(bin);
+  Buffer.from(indices.buffer).copy(bin, 36);
+  const doc = {
+    asset: { version: "2.0" },
+    scene: 0,
+    scenes: [{ nodes: [0] }],
+    nodes: [{ mesh: 0 }],
+    meshes: [
+      {
+        primitives: [{ attributes: { POSITION: 0 }, indices: 1, material: 0 }],
+      },
+    ],
+    materials: [
+      {
+        pbrMetallicRoughness: {
+          baseColorFactor: [0.5, 0.05, 0.2, 1],
+          metallicFactor: 0,
+          roughnessFactor: 0.8,
+        },
+        doubleSided: true,
+      },
+    ],
+    buffers: [{ byteLength: 44 }],
+    bufferViews: [
+      { buffer: 0, byteOffset: 0, byteLength: 36, target: 34962 },
+      { buffer: 0, byteOffset: 36, byteLength: 6, target: 34963 },
+    ],
+    accessors: [
+      {
+        bufferView: 0,
+        componentType: 5126,
+        count: 3,
+        type: "VEC3",
+        min: [-0.25, 0, 0],
+        max: [0.25, 1.4, 0],
+      },
+      { bufferView: 1, componentType: 5123, count: 3, type: "SCALAR" },
+    ],
+    ...patch,
+  };
+  let json = Buffer.from(JSON.stringify(doc));
+  const pad = (4 - (json.length % 4)) % 4;
+  json = Buffer.concat([json, Buffer.alloc(pad, 32)]);
+  const result = Buffer.alloc(12 + 8 + json.length + 8 + bin.length);
+  result.writeUInt32LE(0x46546c67, 0);
+  result.writeUInt32LE(2, 4);
+  result.writeUInt32LE(result.length, 8);
+  result.writeUInt32LE(json.length, 12);
+  result.writeUInt32LE(0x4e4f534a, 16);
+  json.copy(result, 20);
+  const o = 20 + json.length;
+  result.writeUInt32LE(bin.length, o);
+  result.writeUInt32LE(0x004e4942, o + 4);
+  bin.copy(result, o + 8);
+  return result.buffer.slice(
+    result.byteOffset,
+    result.byteOffset + result.byteLength,
+  );
+}

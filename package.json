@@ -13,16 +13,18 @@
     "prestart": "npm run build",
     "test:browser": "node tests/browser.mjs",
     "build:lab": "npm run build && node lab/build.mjs",
-    "test:lab": "node --test lab/tests/policy.test.mjs lab/tests/pilot.test.mjs lab/tests/fabric.test.mjs",
+    "test:lab": "node --test lab/tests/*.test.mjs",
     "test:lab:browser": "node lab/tests/browser.mjs",
     "start:lab": "python3 -m http.server 4173",
-    "pretest:lab": "node lab/restore-pilot.mjs"
+    "pretest:lab": "node lab/restore-pilot.mjs",
+    "test:motion": "python3 -m unittest discover -s tools/blender -p test_motion_metrics.py"
   },
   "dependencies": {
     "three": "0.180.0"
   },
   "devDependencies": {
     "esbuild": "0.25.12",
-    "playwright": "1.56.1"
+    "playwright": "1.56.1",
+    "prettier": "3.6.2"
   }
 }

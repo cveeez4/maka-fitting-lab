@@ -30,4 +30,8 @@ Build-time dependency only. Source: https://github.com/evanw/esbuild
 No code from Anny, clad-body, Seamer Studio, GarmentCode, NVIDIA Warp, SMPL, or FASHN is included in v0.1. They are research candidates only.
 
 ## User-supplied reference photographs (v0.2)
-Not open-source assets. Included only for private review; public redistribution and commercial rights are not established.
+Not open-source assets. Published in this development repository at the owner’s explicit request. They are not open-source assets; broader redistribution and commercial rights remain to be verified.
+
+## Prettier 3.6.2 (MIT)
+
+Build/development formatting tool only; pinned in package-lock. Not embedded as a runtime service. Source: https://github.com/prettier/prettier

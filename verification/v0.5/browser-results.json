@@ -1,0 +1,58 @@
+[
+  {
+    "viewport": "desktop",
+    "size": [
+      1440,
+      1050
+    ],
+    "result": "PASS",
+    "checks": [
+      "actual 100-frame bake loaded",
+      "pilot versus legacy geometry switch",
+      "offline rendering",
+      "distinct normal/roughness fabric maps and comparison toggle",
+      "rendered canvas changes with weave maps on/off",
+      "static shadow caching enabled",
+      "exposure and light-angle controls with reset",
+      "front/back/side/detail/cuff cameras",
+      "material/light/color and detail camera",
+      "reference modal and Escape",
+      "embedded GLB local import",
+      "external image blocked before request",
+      "preserve current model on rejection",
+      "import disables material controls",
+      "restore",
+      "PNG download",
+      "no network or localStorage",
+      "no overflow or JavaScript errors"
+    ]
+  },
+  {
+    "viewport": "mobile",
+    "size": [
+      390,
+      844
+    ],
+    "result": "PASS",
+    "checks": [
+      "actual 100-frame bake loaded",
+      "pilot versus legacy geometry switch",
+      "offline rendering",
+      "distinct normal/roughness fabric maps and comparison toggle",
+      "rendered canvas changes with weave maps on/off",
+      "static shadow caching enabled",
+      "exposure and light-angle controls with reset",
+      "front/back/side/detail/cuff cameras",
+      "material/light/color and detail camera",
+      "reference modal and Escape",
+      "embedded GLB local import",
+      "external image blocked before request",
+      "preserve current model on rejection",
+      "import disables material controls",
+      "restore",
+      "PNG download",
+      "no network or localStorage",
+      "no overflow or JavaScript errors"
+    ]
+  }
+]

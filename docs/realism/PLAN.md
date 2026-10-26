@@ -1,3 +1,5 @@
+> Latest rendering iteration: see `CHECKPOINT-0.5.md`. The physical simulation described below is unchanged.
+
 # Checkpoint 0.4 — connected draft + guided lower-skirt simulation
 
 ## Implemented and actually executed
@@ -11,7 +13,7 @@
 
 ## Quality evidence and unresolved defects
 
-See `verification/v0.4/simulation-report.json` for exact metrics and mesh counts. The guided run reaches a low last-ten-frame **RMS motion** under the engineering threshold. This is a limited settling diagnostic, not a quality or fit certificate.
+See `verification/v0.4/shipping-bake-report.json` for exact metrics and mesh counts. The guided run reaches a low last-ten-frame **RMS motion** under the engineering threshold. This is a limited settling diagnostic, not a quality or fit certificate.
 
 The report still flags nearest-body penetration candidates. These are measured on raw simulation vertices before render smoothing and thickness. The detector is a nearest-surface signed-distance heuristic, not a complete triangle/triangle, body-clearance or self-intersection proof. The shipped mesh is not decimated, to preserve the cuff boundaries. Postprocessing can change clearance; it is not re-certified. **Fit release remains false.**
 

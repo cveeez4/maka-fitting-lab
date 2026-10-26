@@ -1,0 +1,34 @@
+{
+  "checkpoint": "0.5-material-inspection",
+  "baseSimulationCheckpoint": "0.4-guided-lower-skirt",
+  "geometryAndSimulationUnchanged": true,
+  "proceduralFabricScannedOrCalibrated": false,
+  "presets": [
+    "crepe",
+    "satin",
+    "linen"
+  ],
+  "newFeatures": [
+    "distinct periodic normal and roughness maps",
+    "mipmaps and capped anisotropic filtering",
+    "map on/off visual comparison",
+    "filtered VSM ground shadow",
+    "static shadow cache invalidated on garment/light changes",
+    "exposure and light-angle controls/reset",
+    "back and cuff cameras"
+  ],
+  "tests": {
+    "baselineUnitPassed": 6,
+    "labUnitPassed": 12,
+    "desktopBrowser": "PASS",
+    "mobileBrowser": "PASS",
+    "renderedMapComparison": "different canvas PNG captures, both viewports",
+    "physicalPhoneBenchmark": false
+  },
+  "triangles": 149436,
+  "calibratedFit": false,
+  "fullGarmentSimulationAccepted": false,
+  "hostedDeployment": false,
+  "offlineHtmlSha256": "2432b0de5f2e5c298332116cbff21d24b7b9e2586b1c8b432a8f30a55128e4e2",
+  "offlineHtmlBytes": 10070496
+}

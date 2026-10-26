@@ -1,4 +1,4 @@
-# MAKA Realism Lab — first engineering checkpoint
+# MAKA Realism Lab — material inspection 0.5
 
 Run from the repository root:
 
@@ -16,3 +16,5 @@ The default asset is now an authored connected-sleeve abaya draft with an actual
 An imported GLB uses its own embedded materials; measurement and fabric overrides are intentionally not applied. Height normalization is for display only. Arbitrary external resource URIs are rejected; files stay on the device.
 
 If Chromium is not installed, run `npm exec playwright install chromium` before the browser tests, or set `CHROMIUM_PATH` to an installed Chromium executable. These tests are functional/offline tests, not a physical phone performance benchmark.
+
+Material iteration 0.5 uses separate procedural normal/roughness maps, with mipmapped filtering, a detail toggle, exposure/light-angle/reset controls, and front/back/side/bodice/cuff cameras. It is a rendering update; the guided lower-skirt bake and all fitting limitations remain unchanged. See `docs/realism/CHECKPOINT-0.5.md`.

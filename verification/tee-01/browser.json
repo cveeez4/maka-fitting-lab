@@ -1,0 +1,22 @@
+[
+  {
+    "viewport": "desktop",
+    "width": 1440,
+    "height": 1050,
+    "errors": [],
+    "network": [],
+    "triangles": 112184,
+    "shirtMeshes": 2,
+    "scope": "Offline Chromium viewport smoke checks; not physical phone or visual acceptance"
+  },
+  {
+    "viewport": "mobile",
+    "width": 390,
+    "height": 844,
+    "errors": [],
+    "network": [],
+    "triangles": 112184,
+    "shirtMeshes": 2,
+    "scope": "Offline Chromium viewport smoke checks; not physical phone or visual acceptance"
+  }
+]

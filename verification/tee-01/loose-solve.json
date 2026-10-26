@@ -1,0 +1,79 @@
+{
+  "study": "TEE-01",
+  "reference": "Original generic crew-neck construction brief; no product photo supplied or matched",
+  "framesExecuted": 96,
+  "fps": 24,
+  "offlineDrape": true,
+  "pinned": "neck/upper shoulders above z1.315m; not a free garment solve",
+  "initialStaticProjectionVertices": 549,
+  "solverVertexCount": 5546,
+  "armholeSharedLoops": 2,
+  "motionLast12": [
+    {
+      "frame": 85,
+      "rmsMeters": 0.003955824265350889
+    },
+    {
+      "frame": 86,
+      "rmsMeters": 0.003349524061456161
+    },
+    {
+      "frame": 87,
+      "rmsMeters": 0.003396489706271939
+    },
+    {
+      "frame": 88,
+      "rmsMeters": 0.0038941404519529993
+    },
+    {
+      "frame": 89,
+      "rmsMeters": 0.004769870226990469
+    },
+    {
+      "frame": 90,
+      "rmsMeters": 0.005766131105095103
+    },
+    {
+      "frame": 91,
+      "rmsMeters": 0.005728680341861783
+    },
+    {
+      "frame": 92,
+      "rmsMeters": 0.00541339130958822
+    },
+    {
+      "frame": 93,
+      "rmsMeters": 0.0044124043853906725
+    },
+    {
+      "frame": 94,
+      "rmsMeters": 0.0037627442807234117
+    },
+    {
+      "frame": 95,
+      "rmsMeters": 0.003308175655778878
+    },
+    {
+      "frame": 96,
+      "rmsMeters": 0.004002049532831834
+    }
+  ],
+  "rawVertexBodyDiagnostic": {
+    "negativeNearestPlaneVertices": 0,
+    "minSignedNearestPlaneMeters": 0.0025171133938783896,
+    "notSurfaceClearanceProof": true
+  },
+  "elapsedSeconds": 169.09478616714478,
+  "visualAccepted": false,
+  "fitAccepted": false,
+  "physicalCalibrationAccepted": false,
+  "selfIntersectionAccepted": false,
+  "bodyFacesMasked": false,
+  "limitations": [
+    "Fixed uncalibrated statistical body",
+    "Original approximate construction, not commercial pattern",
+    "Motion includes pinned vertices; not a free-vertex convergence gate",
+    "Render subdivision and thickness not certified clear",
+    "Fabric settings illustrative, not calibrated cotton"
+  ]
+}

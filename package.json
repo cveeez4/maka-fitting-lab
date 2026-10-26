@@ -19,7 +19,9 @@
     "pretest:lab": "node lab/restore-pilot.mjs",
     "test:motion": "python3 -m unittest discover -s tools/blender -p test_motion_metrics.py",
     "build:shape": "npm run build && node shape/build.mjs",
-    "test:shape:browser": "node shape/check.mjs"
+    "test:shape:browser": "node shape/check.mjs",
+    "build:tee": "npm run build && node tee/build.mjs",
+    "test:tee:browser": "node tee/check.mjs"
   },
   "dependencies": {
     "three": "0.180.0"

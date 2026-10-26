@@ -1,0 +1,4 @@
+import fs from 'node:fs';import zlib from 'node:zlib';import crypto from 'node:crypto';
+const sha=b=>crypto.createHash('sha256').update(b).digest('hex');const manifest=JSON.parse(fs.readFileSync('tee/assets/manifest.json','utf8'));
+const b=Buffer.from(manifest.parts.map(p=>{if(!/^tee01-\d+\.b64$/.test(p))throw Error('Invalid tee pack path');return fs.readFileSync('tee/assets/'+p,'utf8')}).join(''),'base64');if(sha(b)!==manifest.sha256)throw Error('Tee pack checksum mismatch');
+const allowed=['tshirt.glb','tshirt-construction.glb','tshirt-source.blend','report.json','topology.json'];fs.mkdirSync('generated/tee',{recursive:true});for(const f of JSON.parse(zlib.gunzipSync(b))){if(!allowed.includes(f.name))throw Error('Invalid tee asset name');const data=Buffer.from(f.data,'base64');if(sha(data)!==f.sha256)throw Error('Tee asset checksum mismatch');fs.writeFileSync('generated/tee/'+f.name,data);}

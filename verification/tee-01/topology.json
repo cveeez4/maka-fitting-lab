@@ -1,0 +1,17 @@
+{
+  "components": 1,
+  "openBoundaryLoops": 4,
+  "openings": [
+    "neck",
+    "hem",
+    "left cuff",
+    "right cuff"
+  ],
+  "branchedBoundaryVertices": 0,
+  "edgesWithMoreThanTwoFaces": 0,
+  "bodyVertices": 12302,
+  "bodyFaces": 24600,
+  "bodyFacesRemoved": 0,
+  "sleeveFrameUpward": true,
+  "note": "Topology is not a physical clearance or visual acceptance gate"
+}

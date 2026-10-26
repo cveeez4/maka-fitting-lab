@@ -1,0 +1,87 @@
+{
+  "study": "TEE-01",
+  "reference": "Original generic crew-neck construction brief; no product photo supplied or matched",
+  "framesExecuted": 96,
+  "fps": 24,
+  "offlineDrape": true,
+  "pinned": "neck/upper shoulders above z1.315m; not a free garment solve",
+  "initialStaticProjectionVertices": 574,
+  "solverVertexCount": 5546,
+  "armholeSharedLoops": 2,
+  "motionLast12": [
+    {
+      "frame": 85,
+      "rmsMeters": 0.0033263984299606365
+    },
+    {
+      "frame": 86,
+      "rmsMeters": 0.0033972775232979533
+    },
+    {
+      "frame": 87,
+      "rmsMeters": 0.0035428607076270074
+    },
+    {
+      "frame": 88,
+      "rmsMeters": 0.0035139598990327255
+    },
+    {
+      "frame": 89,
+      "rmsMeters": 0.0028504225390041087
+    },
+    {
+      "frame": 90,
+      "rmsMeters": 0.0031663251881258393
+    },
+    {
+      "frame": 91,
+      "rmsMeters": 0.002882914179697122
+    },
+    {
+      "frame": 92,
+      "rmsMeters": 0.0025597071281963026
+    },
+    {
+      "frame": 93,
+      "rmsMeters": 0.002246659700108557
+    },
+    {
+      "frame": 94,
+      "rmsMeters": 0.0023529777524993333
+    },
+    {
+      "frame": 95,
+      "rmsMeters": 0.00226226926996534
+    },
+    {
+      "frame": 96,
+      "rmsMeters": 0.002173791221107373
+    }
+  ],
+  "rawVertexBodyDiagnostic": {
+    "negativeNearestPlaneVertices": 0,
+    "minSignedNearestPlaneMeters": 0.005240637396354941,
+    "notSurfaceClearanceProof": true
+  },
+  "elapsedSeconds": 112.46460366249084,
+  "visualAccepted": false,
+  "fitAccepted": false,
+  "physicalCalibrationAccepted": false,
+  "selfIntersectionAccepted": false,
+  "bodyFacesMasked": false,
+  "limitations": [
+    "Fixed uncalibrated statistical body",
+    "Original approximate construction, not commercial pattern",
+    "Motion includes pinned vertices; not a free-vertex convergence gate",
+    "Render subdivision and thickness not certified clear",
+    "Fabric settings illustrative, not calibrated cotton"
+  ],
+  "settlingAccepted": false,
+  "assetSha256": "7d84f67e1ebff7168fb04e112e517bc94542abef7c9446cd7b2b720985184f8b",
+  "visualReviewNotes": [
+    "Corrected sleeve-frame twist; earlier solve rejected",
+    "Reduced excessive ease versus second solve",
+    "Underarm folds and collar edge still require visual refinement",
+    "No product-reference tee supplied; not a likeness claim"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "sha256": "974c08f24fd9743c4f4e91108350e073838a2f59fb50e7ce04d697154dbfb135",
+  "parts": [
+    "tee01-01.b64",
+    "tee01-02.b64",
+    "tee01-03.b64",
+    "tee01-04.b64",
+    "tee01-05.b64",
+    "tee01-06.b64",
+    "tee01-07.b64",
+    "tee01-08.b64",
+    "tee01-09.b64",
+    "tee01-10.b64",
+    "tee01-11.b64",
+    "tee01-12.b64",
+    "tee01-13.b64"
+  ],
+  "files": [
+    {
+      "name": "tshirt.glb",
+      "sha256": "7d84f67e1ebff7168fb04e112e517bc94542abef7c9446cd7b2b720985184f8b"
+    },
+    {
+      "name": "tshirt-construction.glb",
+      "sha256": "e862ba13a9a918d70c3eddcbbb36d64fe95d263437179aceccb6f6ddedb7c575"
+    },
+    {
+      "name": "tshirt-source.blend",
+      "sha256": "ba1d6621008083aba165bf3a00eaa3ce77ccc1ce0744bf8d4e8df6c49d6a65f2"
+    },
+    {
+      "name": "report.json",
+      "sha256": "e97f1b4c890d5a62d27ee7ccbb23633f118e3d780baee5dc8a64dd10bb55b56e"
+    },
+    {
+      "name": "topology.json",
+      "sha256": "5da6c1951d37e3cca1f1ebeab4256159d563ef95058fa38c7b2df05a0e7f27ff"
+    }
+  ]
+}

@@ -1,3 +1,9 @@
+## Foundation / TEE 01 — simpler garment first
+
+Abaya development is paused, not removed. The current review candidate is an original plain short-sleeved crew-neck tee on a fixed mannequin. It has a corrected shared-index sleeve frame, neutral clay/off-white views and front/back/side/neck/underarm inspection. A real 96-frame offline drape was executed; its result remains an **unapproved visual study**, not calibrated cotton, surface-clearance proof or measurement fitting. The first twisted-sleeve solve was rejected, and the excessive-ease revision was narrowed. Underarm folds and the collar still need visual refinement.
+
+Run `npm run build:tee`, open `dist/maka-tee-01.html`. Complete GLB, unsimulated construction, editable pre-solve Blender source and reports are restored from checksummed transport. See `docs/realism/TEE-01.md` and `verification/tee-01/`. No new product photograph is implied: the flat tee drawing is an original illustrative brief. Earlier abaya pages remain intact. No deployment or main merge is implied.
+
 ## Shape review 0.7 — static construction revision (not approved likeness)
 
 The 0.6 visual asset was rejected as a realistic product match. A new **static shape-review page** puts the revised garment on a visible fixed mannequin, alongside the original reference at useful size. Neutral clay is the default; illustrative color is secondary. Revised shoulders/inner/sleeves, flat ribbon surfaces and approximate decorated textile cuffs are included. The silhouette and drape still need visual work: **no likeness, authentic pattern, physics, surface-clearance or size-fit acceptance is claimed.**
